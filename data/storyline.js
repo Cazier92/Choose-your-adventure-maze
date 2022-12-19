@@ -4,7 +4,7 @@ const storyline = [
         message: 'You approach an ancient castle, what could be inside?', 
         optOne: 'Go inside and explore!',
         optTwo: "Go home... It's been a long day...",
-        next: [1, 2]
+        next: [1, 3]
     },
 
     {
@@ -18,11 +18,21 @@ const storyline = [
         page: 2,
         message: 'You were surrounded by goblins and killed!',
         optOne: null,
-        optTwo: null,
+        optTwo: undefined,
+        next: []
+    },
+    {
+        page: 3,
+        message: 'But you will never know the adventure you could have had...',
+        optOne: 0,
+        optTwo: undefined,
         next: []
     },
 
 ]
+
+// * option values other than str: null=dead, 0=gaveUp
+// * page 3 is initial gave up page
 
 function startPage() {
     return storyline[0]

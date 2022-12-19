@@ -53,7 +53,7 @@ function render() {
 }
 
 function appendOptions() { 
-    if (page[page.length -1].optTwo !== null) {
+    if (page[page.length -1].optOne !== null) {
         let containerOne = document.createElement('div')
         containerOne.className = 'container'
         containerOne.innerHTML = 
@@ -63,7 +63,7 @@ function appendOptions() {
             </div>`
         containerBlock.appendChild(containerOne)
     }
-    if (page[page.length -1].optTwo === null) {
+    if (page[page.length -1].optOne === null) {
         let containerOne = document.createElement('div')
         containerOne.className = 'container'
         containerOne.innerHTML = 
@@ -74,7 +74,19 @@ function appendOptions() {
             </div>`
         containerBlock.appendChild(containerOne)
     }
-    if (page[page.length -1].optTwo !== null) {
+    if (page[page.length -1].optOne === 0) {
+        containerBlock.innerHTML = ''
+        let containerOne = document.createElement('div')
+        containerOne.className = 'container'
+        containerOne.innerHTML = 
+            `<div id="dead-container" class="container">
+                <h2>Would you like to go back?</h2>
+                <button class='restart-buttons' id='yes-button'>Yes</button>
+                <button class= 'restart-buttons' id='no-button'>No</button>
+            </div>`
+        containerBlock.appendChild(containerOne)
+    }
+    if (page[page.length -1].optTwo !== undefined) {
         let containerTwo = document.createElement('div')
         containerTwo.className = 'container'
         containerTwo.innerHTML = 
