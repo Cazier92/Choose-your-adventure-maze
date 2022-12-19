@@ -10,6 +10,7 @@ import { nextPage } from "../data/storyline.js"
 
 let page = []
 let clickCount = 0
+let timeLeft = 5
 
 
 // * Chached Element References:
@@ -52,64 +53,24 @@ function render() {
     containerBlock.innerHTML = ''
     appendOptions()
     updateMessage()
+    // cliffOutcome()
 }
 
 function appendOptions() { 
     if (page[page.length -1].optOne !== null) {
-        let containerOne = document.createElement('div')
-        containerOne.className = 'container'
-        containerOne.innerHTML = 
-            `<div id="container-one" class="container">
-                <h2>Do You:</h2>
-                <p id="option-one" class="option-text">${page[page.length -1].optOne}</p>
-            </div>`
-        containerBlock.appendChild(containerOne)
+        optOneContent()
     }
     if (page[page.length -1].optOne === null) {
-        let containerOne = document.createElement('div')
-        containerOne.className = 'container'
-        containerOne.innerHTML = 
-            `<div id="dead-container" class="container">
-                <h2>You Died! Do you want to play again?</h2>
-                <button class='restart-buttons' id='yes-button'>Yes</button>
-                <button class= 'restart-buttons' id='no-button'>No</button>
-            </div>`
-        containerBlock.appendChild(containerOne)
+        dead()
     }
     if (page[page.length -1].optOne === 0) {
-        containerBlock.innerHTML = ''
-        let containerOne = document.createElement('div')
-        containerOne.className = 'container'
-        containerOne.innerHTML = 
-            `<div id="gave-up-container" class="container">
-            <h2>Would you like to go back?</h2>
-            <button class='restart-buttons' id='yes-button'>Yes</button>
-            <button class= 'restart-buttons' id='no-button'>No</button>
-            </div>`
-        containerBlock.appendChild(containerOne)
+        giveUp()
     }
     if (page[page.length -1].optOne === 1) {
-        // containerBlock.innerHTML = ''
-        // let containerOne = document.createElement('div')
-        // containerOne.className = 'container'
-        // containerOne.innerHTML = 
-        //     `<div id="cliff-container" class="container">
-        //         <h2>Hurry! Click to climb the cliff!</h2>
-        //         <div id='countdown'></div>
-        //         <button id='cliff-button'>Climb!</button>
-        //     </div>`
-        // containerBlock.appendChild(containerOne)
         cliff()
     }
     if (page[page.length -1].optTwo !== undefined) {
-        let containerTwo = document.createElement('div')
-        containerTwo.className = 'container'
-        containerTwo.innerHTML = 
-            `<div id="container-two" class="container">
-                <h2>Do You:</h2>
-                <p id="option-two" class="option-text">${page[page.length -1].optTwo}</p>
-            </div>`
-        containerBlock.appendChild(containerTwo)
+        optTwoContent()
     }
 }
 
@@ -141,12 +102,12 @@ function restartGame(evt) {
         messageEl.textContent = "You'll never know the adventures you missed out on!"
     }
 }
-// console.log(page[0].next)
 
 function climb(evt) {
     if (evt.target.id === 'cliff-button') {
         clickCount ++
     }
+    console.log(clickCount)
 }
 
 function cliff() {
@@ -160,19 +121,68 @@ function cliff() {
             <button id='cliff-button'>Climb!</button>
         </div>`
     containerBlock.appendChild(containerOne)
+
+    cliffOutcome()
+}
+
+function cliffOutcome() {
     let countdownEl = document.getElementById('countdown')
-    
-    let timeLeft= 10;
     
     let timer = setInterval(function() {
         countdownEl.textContent = timeLeft + ' seconds remaining.';
         timeLeft -= 1;
-        if (timeLeft < 0) {
-            countdownEl.textContent = 'Finished!'
-                    // confetti.start(500)
-                    
+        if (timeLeft < 0 && clickCount >= 5) {
+            page.push(nextPage(page[page.length -1].next[0]))
+        }
+        else {
+            page.push(nextPage(page[page.length -1].next[1]))
         }
     }, 1000)
+}
 
+function optOneContent() {
+    let containerOne = document.createElement('div')
+    containerOne.className = 'container'
+    containerOne.innerHTML = 
+        `<div id="container-one" class="container">
+            <h2>Do You:</h2>
+            <p id="option-one" class="option-text">${page[page.length -1].optOne}</p>
+        </div>`
+    containerBlock.appendChild(containerOne)
+}
 
+function dead() {
+    let containerOne = document.createElement('div')
+        containerOne.className = 'container'
+        containerOne.innerHTML = 
+            `<div id="dead-container" class="container">
+                <h2>You Died! Do you want to play again?</h2>
+                <button class='restart-buttons' id='yes-button'>Yes</button>
+                <button class= 'restart-buttons' id='no-button'>No</button>
+            </div>`
+        containerBlock.appendChild(containerOne)
+}
+
+function giveUp() {
+    containerBlock.innerHTML = ''
+        let containerOne = document.createElement('div')
+        containerOne.className = 'container'
+        containerOne.innerHTML = 
+            `<div id="gave-up-container" class="container">
+            <h2>Would you like to go back?</h2>
+            <button class='restart-buttons' id='yes-button'>Yes</button>
+            <button class= 'restart-buttons' id='no-button'>No</button>
+            </div>`
+        containerBlock.appendChild(containerOne)
+}
+
+function optTwoContent() {
+    let containerTwo = document.createElement('div')
+        containerTwo.className = 'container'
+        containerTwo.innerHTML = 
+            `<div id="container-two" class="container">
+                <h2>Do You:</h2>
+                <p id="option-two" class="option-text">${page[page.length -1].optTwo}</p>
+            </div>`
+        containerBlock.appendChild(containerTwo)
 }

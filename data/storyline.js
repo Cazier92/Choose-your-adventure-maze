@@ -33,9 +33,16 @@ const storyline = [
         message: 'You slipped and are dangling from the edge of a cliff!!!',
         optOne: 1,
         optTwo: undefined,
-        next: []
+        next: [0, 5]
     },
-
+    {
+        page: 5,
+        message: 'NOOO!!! You fell to an untimely demise!',
+        optOne: null,
+        optTwo: undefined,
+        next: [ ]
+    },
+        
 ]
 
 // * option values other than str: null=dead, 0=gaveUp, 1=cliff
