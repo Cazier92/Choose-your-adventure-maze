@@ -27,7 +27,7 @@ const containerBlock = document.getElementById('container-block')
 // containerOne.addEventListener('click', console.log('containerOne clicked'))
 containerBlock.addEventListener('click', handleClick)
 containerBlock.addEventListener('click', restartGame)
-containerBlock.addEventListener('click', cliff)
+containerBlock.addEventListener('click', climb)
 
 // * Functions:
 
@@ -89,15 +89,17 @@ function appendOptions() {
         containerBlock.appendChild(containerOne)
     }
     if (page[page.length -1].optOne === 1) {
-        containerBlock.innerHTML = ''
-        let containerOne = document.createElement('div')
-        containerOne.className = 'container'
-        containerOne.innerHTML = 
-            `<div id="cliff-container" class="container">
-                <h2>Hurry! Click to climb the cliff!</h2>
-                <button id='cliff-button'>Climb!</button>
-            </div>`
-        containerBlock.appendChild(containerOne)
+        // containerBlock.innerHTML = ''
+        // let containerOne = document.createElement('div')
+        // containerOne.className = 'container'
+        // containerOne.innerHTML = 
+        //     `<div id="cliff-container" class="container">
+        //         <h2>Hurry! Click to climb the cliff!</h2>
+        //         <div id='countdown'></div>
+        //         <button id='cliff-button'>Climb!</button>
+        //     </div>`
+        // containerBlock.appendChild(containerOne)
+        cliff()
     }
     if (page[page.length -1].optTwo !== undefined) {
         let containerTwo = document.createElement('div')
@@ -121,12 +123,12 @@ function handleClick(evt) {
         // console.log(nextPage(page[0].next[0]))
         // page = nextPage(page[page.length -1].next[0])
         page.push(nextPage(page[page.length -1].next[0]))
-        console.log(page)
+        // console.log(page)
     } else if (evt.target.id === 'container-two') {
         console.log('you clicked on container-two')
         // page = nextPage(page[page.length -1].next[1])
         page.push(nextPage(page[page.length -1].next[1]))
-        console.log(page)
+        // console.log(page)
     }
     render()
 }
@@ -141,11 +143,36 @@ function restartGame(evt) {
 }
 // console.log(page[0].next)
 
-function cliff(evt) {
-    
+function climb(evt) {
     if (evt.target.id === 'cliff-button') {
-        // console.log(evt)
         clickCount ++
     }
-    // console.log(clickCount, typeof clickCount)
+}
+
+function cliff() {
+    containerBlock.innerHTML = ''
+    let containerOne = document.createElement('div')
+    containerOne.className = 'container'
+    containerOne.innerHTML = 
+        `<div id="cliff-container" class="container">
+            <h2>Hurry! Click to climb the cliff!</h2>
+            <div id='countdown'></div>
+            <button id='cliff-button'>Climb!</button>
+        </div>`
+    containerBlock.appendChild(containerOne)
+    let countdownEl = document.getElementById('countdown')
+    
+    let timeLeft= 10;
+    
+    let timer = setInterval(function() {
+        countdownEl.textContent = timeLeft + ' seconds remaining.';
+        timeLeft -= 1;
+        if (timeLeft < 0) {
+            countdownEl.textContent = 'Finished!'
+                    // confetti.start(500)
+                    
+        }
+    }, 1000)
+
+
 }
