@@ -12,7 +12,7 @@ const storyline = [
         message: 'It seems the castle is built like a maze, but parts of it are crumbling. It might be dangerous! Up ahead you find a fire-lit hall and a dark hall.',
         optOne: 'Take the well lit route?',
         optTwo: 'Risk the dark path and hope for light at the end of the tunnel!',
-        next: []
+        next: [2, 3]
     },
 
 

@@ -4,11 +4,11 @@ import { nextPage } from "../data/storyline.js"
 
 // * Constants:
 
-const page = []
+
 
 // * Variables:
 
-
+let page = []
 
 
 // * Chached Element References:
@@ -48,6 +48,7 @@ function generateContent() {
 function render() {
     containerBlock.innerHTML = ''
     appendOptions()
+    updateMessage()
 }
 
 function appendOptions() { 
@@ -56,26 +57,38 @@ function appendOptions() {
     containerOne.innerHTML = 
         `<div id="container-one" class="container">
             <h2>Do You:</h2>
-            <p id="option-one" class="option-text">${page[0].optOne}</p>
+            <p id="option-one" class="option-text">${page[page.length -1].optOne}</p>
         </div>`
     containerBlock.appendChild(containerOne)
-    if (page[0].optTwo !== null) {
+    if (page[page.length -1].optTwo !== null) {
         let containerTwo = document.createElement('div')
         containerTwo.className = 'container'
         containerTwo.innerHTML = 
             `<div id="container-two" class="container">
                 <h2>Do You:</h2>
-                <p id="option-two" class="option-text">${page[0].optTwo}</p>
+                <p id="option-two" class="option-text">${page[page.length -1].optTwo}</p>
             </div>`
         containerBlock.appendChild(containerTwo)
     }
 }
 
+function updateMessage() {
+    messageEl.textContent = page[page.length -1].message
+}
+
 function handleClick(evt) {
     if (evt.target.id === 'container-one') {
         console.log('you clicked on container-one')
+        // console.log(nextPage(page[0].next[0]))
+        // page = nextPage(page[page.length -1].next[0])
+        page.push(nextPage(page[page.length -1].next[0]))
+        console.log(page)
     } else if (evt.target.id === 'container-two') {
         console.log('you clicked on container-two')
+        // page = nextPage(page[page.length -1].next[1])
+        page.push(nextPage(page[page.length -1].next[1]))
+        console.log(page)
     }
+    render()
 }
 // console.log(page[0].next)
