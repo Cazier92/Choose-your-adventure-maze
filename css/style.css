@@ -17,7 +17,7 @@ h1 {
     font-size: 25px;
 }
 
-.container-block {
+#container-block {
     display: flex;
     /* justify-content: space-between; */
     gap: 20px;
