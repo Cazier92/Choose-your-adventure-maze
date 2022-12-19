@@ -53,7 +53,7 @@ function render() {
 }
 
 function appendOptions() { 
-    if (page[page.length -1].optOne !== null) {
+    if (page[page.length -1].optOne !== null || page[page.length -1].optOne !== 0) {
         let containerOne = document.createElement('div')
         containerOne.className = 'container'
         containerOne.innerHTML = 
