@@ -9,6 +9,7 @@ import { nextPage } from "../data/storyline.js"
 // * Variables:
 
 let page = []
+let clickCount = 0
 
 
 // * Chached Element References:
@@ -141,10 +142,10 @@ function restartGame(evt) {
 // console.log(page[0].next)
 
 function cliff(evt) {
-    let clickCount = 0
+    
     if (evt.target.id === 'cliff-button') {
         // console.log(evt)
-        clickCount += 1
-        console.log(clickCount)
+        clickCount ++
     }
+    // console.log(clickCount, typeof clickCount)
 }
