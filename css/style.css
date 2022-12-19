@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    flex-direction: column;
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
+    background-color: #3F4B3B;
+}
+
+h1 {
+    color:antiquewhite
+}
+
+#message {
+    margin-top: 50px;
+    color: antiquewhite;
+    font-size: 25px;
+}
+
+.container-block {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 20px;
+    /* background-color: aquamarine; */
+    /* margin-left: 45px; */
+}
+
+.container {
+    width: 400px;
+    height: 400px;
+    background-color: #B6C197;
+    text-align: center;
+}
+
+.option-text {
+    font-size: 20px;
+    color: black;
+}
