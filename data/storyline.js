@@ -12,7 +12,7 @@ const storyline = [
         message: 'It seems the castle is built like a maze, but parts of it are crumbling. It might be dangerous! Up ahead you find a fire-lit hall and a dark hall.',
         optOne: 'Take the well lit route?',
         optTwo: 'Risk the dark path and hope for light at the end of the tunnel!',
-        next: [2, 3]
+        next: [2, 4]
     },
     {
         page: 2,
@@ -28,10 +28,17 @@ const storyline = [
         optTwo: undefined,
         next: []
     },
+    {
+        page: 4,
+        message: 'You slipped and are dangling from the edge of a cliff!!!',
+        optOne: 1,
+        optTwo: undefined,
+        next: []
+    },
 
 ]
 
-// * option values other than str: null=dead, 0=gaveUp
+// * option values other than str: null=dead, 0=gaveUp, 1=cliff
 // * page 3 is initial gave up page
 
 function startPage() {

@@ -26,6 +26,7 @@ const containerBlock = document.getElementById('container-block')
 // containerOne.addEventListener('click', console.log('containerOne clicked'))
 containerBlock.addEventListener('click', handleClick)
 containerBlock.addEventListener('click', restartGame)
+containerBlock.addEventListener('click', cliff)
 
 // * Functions:
 
@@ -53,7 +54,7 @@ function render() {
 }
 
 function appendOptions() { 
-    if (page[page.length -1].optOne !== null || page[page.length -1].optOne !== 0) {
+    if (page[page.length -1].optOne !== null) {
         let containerOne = document.createElement('div')
         containerOne.className = 'container'
         containerOne.innerHTML = 
@@ -79,10 +80,21 @@ function appendOptions() {
         let containerOne = document.createElement('div')
         containerOne.className = 'container'
         containerOne.innerHTML = 
-            `<div id="dead-container" class="container">
-                <h2>Would you like to go back?</h2>
-                <button class='restart-buttons' id='yes-button'>Yes</button>
-                <button class= 'restart-buttons' id='no-button'>No</button>
+            `<div id="gave-up-container" class="container">
+            <h2>Would you like to go back?</h2>
+            <button class='restart-buttons' id='yes-button'>Yes</button>
+            <button class= 'restart-buttons' id='no-button'>No</button>
+            </div>`
+        containerBlock.appendChild(containerOne)
+    }
+    if (page[page.length -1].optOne === 1) {
+        containerBlock.innerHTML = ''
+        let containerOne = document.createElement('div')
+        containerOne.className = 'container'
+        containerOne.innerHTML = 
+            `<div id="cliff-container" class="container">
+                <h2>Hurry! Click to climb the cliff!</h2>
+                <button id='cliff-button'>Climb!</button>
             </div>`
         containerBlock.appendChild(containerOne)
     }
@@ -127,3 +139,12 @@ function restartGame(evt) {
     }
 }
 // console.log(page[0].next)
+
+function cliff(evt) {
+    let clickCount = 0
+    if (evt.target.id === 'cliff-button') {
+        // console.log(evt)
+        clickCount += 1
+        console.log(clickCount)
+    }
+}
