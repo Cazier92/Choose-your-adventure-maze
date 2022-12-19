@@ -4,7 +4,7 @@ const storyline = [
         message: 'You approach an ancient castle, what could be inside?', 
         optOne: 'Go inside and explore!',
         optTwo: "Go home... It's been a long day...",
-        next: [1, 0]
+        next: [1, 2]
     },
 
     {
@@ -14,7 +14,13 @@ const storyline = [
         optTwo: 'Risk the dark path and hope for light at the end of the tunnel!',
         next: [2, 3]
     },
-
+    {
+        page: 2,
+        message: 'You were surrounded by goblins and killed!',
+        optOne: null,
+        optTwo: null,
+        next: []
+    },
 
 ]
 

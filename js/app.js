@@ -25,6 +25,7 @@ const containerBlock = document.getElementById('container-block')
 
 // containerOne.addEventListener('click', console.log('containerOne clicked'))
 containerBlock.addEventListener('click', handleClick)
+containerBlock.addEventListener('click', restartGame)
 
 // * Functions:
 
@@ -52,14 +53,27 @@ function render() {
 }
 
 function appendOptions() { 
-    let containerOne = document.createElement('div')
-    containerOne.className = 'container'
-    containerOne.innerHTML = 
-        `<div id="container-one" class="container">
-            <h2>Do You:</h2>
-            <p id="option-one" class="option-text">${page[page.length -1].optOne}</p>
-        </div>`
-    containerBlock.appendChild(containerOne)
+    if (page[page.length -1].optTwo !== null) {
+        let containerOne = document.createElement('div')
+        containerOne.className = 'container'
+        containerOne.innerHTML = 
+            `<div id="container-one" class="container">
+                <h2>Do You:</h2>
+                <p id="option-one" class="option-text">${page[page.length -1].optOne}</p>
+            </div>`
+        containerBlock.appendChild(containerOne)
+    }
+    if (page[page.length -1].optTwo === null) {
+        let containerOne = document.createElement('div')
+        containerOne.className = 'container'
+        containerOne.innerHTML = 
+            `<div id="dead-container" class="container">
+                <h2>You Died! Do you want to play again?</h2>
+                <button class='restart-buttons' id='yes-button'>Yes</button>
+                <button class= 'restart-buttons' id='no-button'>No</button>
+            </div>`
+        containerBlock.appendChild(containerOne)
+    }
     if (page[page.length -1].optTwo !== null) {
         let containerTwo = document.createElement('div')
         containerTwo.className = 'container'
@@ -90,5 +104,14 @@ function handleClick(evt) {
         console.log(page)
     }
     render()
+}
+function restartGame(evt) {
+    if (evt.target.id === 'yes-button') {
+        init()
+    }
+    if (evt.target.id === 'no-button') {
+        containerBlock.innerHTML = ''
+        messageEl.textContent = "You'll never know the adventures you missed out on!"
+    }
 }
 // console.log(page[0].next)
