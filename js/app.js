@@ -107,16 +107,16 @@ function cliff() {
     // containerBlock.innerHTML = ''
     let cliffContainer = document.createElement('div')
     cliffContainer.className = 'container'
+    cliffContainer.id = 'cliff-container'
     cliffContainer.innerHTML = 
-        `<div id="cliff-container" class="container">
-            <h2>Hurry! Click to climb the cliff!</h2>
-            <div id='countdown'></div>
-            <div class='cliff-btn-div'>
-            <button id='cliff-button'>Climb!</button>
-            <div>
-        </div>`
+        `<h2>Hurry! Click to climb the cliff!</h2>
+        <div id='countdown'></div>
+        <div class='cliff-btn-div'>
+        <button id='cliff-button'>Climb!</button>
+        <div>`
     bodyEl.appendChild(cliffContainer)
     const cliffButton = document.getElementById('cliff-button')
+    clickCount = 0
     cliffButton.addEventListener('click', climb)
     // console.log(cliffButton)
     // console.log(clickCount)
@@ -144,39 +144,12 @@ function cliffOutcome() {
                 page.push(nextPage(page[page.length -1].next[1]))
             }
             render()
-            bodyEl.removeChild(cliffContainer)
+            let containerToRemove = document.getElementById('cliff-container')
+            bodyEl.removeChild(containerToRemove)
         }
     }, 1000)
-    // clearInterval(timer)
-    // let timeout = setTimeout(() => {
-    //     // if (clickCount >= 5) {
-    //         // page.push(nextPage(page[page.length -1].next[0]))
-    //         //     console.log(nextPage(page[page.length -1].next[0]))
-    //         //     // clearTimeout(timer)
-    //         // }
-    //         // else {
-    //             //     page.push(nextPage(page[page.length -1].next[1]))
-    //             // }
-    //             clearInterval(timer)
-    //             console.log(timeLeft)
-    //         }, 6000);
-    //         clearTimeout(timeout)
-    //         console.log(timeLeft)
-    //         if (timeLeft = 0 && clickCount >= 5) {
-    //             page.push(nextPage(page[page.length -1].next[0]))
-    //         } else if (timeLeft = 0) {
-    //             page.push(nextPage(page[page.length -1].next[1]))
-    //         }
-    // setTimeout(() => {
-    //     if (clickCount >= 5) {
-    //         // page.push(nextPage(page[page.length -1].next[0]))
-    //         console.log(nextPage(page[page.length -1].next[0]))
-    //         // clearTimeout(timer)
-    //     }
-    //     else {
-    //         page.push(nextPage(page[page.length -1].next[1]))
-    //     }
-    // }, 6000);
+
+    
 }
 
 function optOneContent() {
