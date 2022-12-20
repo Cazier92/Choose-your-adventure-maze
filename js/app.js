@@ -198,8 +198,10 @@ function optOneContent() {
         `<div id="container-one" class="container">
             <h2>Do You:</h2>
             <p id="option-one" class="option-text">${page[page.length -1].optOne}</p>
+            <img src="${page[page.length -1].img[0]}" alt="">
         </div>`
     containerBlock.appendChild(containerOne)
+    
 }
 
 function dead() {
@@ -236,3 +238,4 @@ function optTwoContent() {
             </div>`
         containerBlock.appendChild(containerTwo)
 }
+

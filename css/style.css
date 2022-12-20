@@ -50,3 +50,7 @@ h1 {
     margin: 20px;
     padding: 20px;
 }
+
+img {
+    max-width: 200px;
+}
