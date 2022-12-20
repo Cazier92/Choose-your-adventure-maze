@@ -12,11 +12,11 @@ const storyline = [
         message: 'It seems the castle is built like a maze, but parts of it are crumbling. It might be dangerous! Up ahead you find two hallways.',
         optOne: 'Take the well lit route?',
         optTwo: 'Risk the dark path and hope for light at the end of the tunnel!',
-        next: [2, 6]
+        next: [20, 6]
     },
     {
         page: 2,
-        message: 'You were surrounded and killed!',
+        message: 'You were surrounded by thieves and killed!',
         optOne: null,
         optTwo: undefined,
         next: []
@@ -142,24 +142,24 @@ const storyline = [
     },
     {
         page: 20,
-        message: "",
-        optOne: "",
-        optTwo: "",
-        next: [ ]
+        message: "You find yourself in a long corridor. This was once a grand complex, but has since fallen to ruin. Most of the paths and chambers have crumbled to the ground, but you find the ruins of a temple.",
+        optOne: "Explore the ruins for treasure!",
+        optTwo: "Stick to the corridor. Something feels off about this place.",
+        next: [21, 22]
     },
     {
         page: 21,
-        message: "",
-        optOne: "",
-        optTwo: "",
-        next: [ ]
+        message: "You find a site once used for arcane rituals! But no treasure. The air feels heavy with magic from distant past.",
+        optOne: "Want to go back to the start?",
+        optTwo: "Keep looking for treasure?",
+        next: [0, 2]
     },
     {
         page: 22,
-        message: "",
-        optOne: "",
-        optTwo: "",
-        next: [ ]
+        message: "Too much has fallen into decay. You can't go on any further.",
+        optOne: "Want to go back to the start?",
+        optTwo: "Cut your losses and go home?",
+        next: [0, 3]
     },
     {
         page: 23,
