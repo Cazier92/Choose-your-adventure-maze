@@ -33,7 +33,7 @@ const storyline = [
         message: 'You find yourself falling into nothing, reach out... And now are dangling from the edge of a cliff!!!',
         optOne: 1,
         optTwo: undefined,
-        next: [12, 5, 13]
+        next: [12, 5, 13, 16]
     },
     {
         page: 5,
@@ -107,6 +107,13 @@ const storyline = [
     },
     {
         page: 15,
+        message: "",
+        optOne: "",
+        optTwo: "",
+        next: [ ]
+    },
+    {
+        page: 16,
         message: "",
         optOne: "",
         optTwo: "",

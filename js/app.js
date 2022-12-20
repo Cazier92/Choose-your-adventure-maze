@@ -122,14 +122,17 @@ function cliffOutcome() {
         }
         if (timeLeft === -1) {
             clearInterval(timer)
-            if (clickCount >= 15) {
-                page.push(nextPage(page[page.length -1].next[0]))
+            if (clickCount >= 25) {
+                page.push(nextPage(page[page.length -1].next[3]))
             }
-            if (clickCount < 10) {
-                page.push(nextPage(page[page.length -1].next[1]))
+            if (clickCount >= 15 && clickCount < 25) {
+                page.push(nextPage(page[page.length -1].next[0]))
             }
             if (clickCount >= 10 && clickCount < 15) {
                 page.push(nextPage(page[page.length -1].next[2]))
+            }
+            if (clickCount < 10) {
+                page.push(nextPage(page[page.length -1].next[1]))
             }
             render()
             let containerToRemove = document.getElementById('cliff-container')
