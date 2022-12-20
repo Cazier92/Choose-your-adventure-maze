@@ -10,36 +10,28 @@ import { nextPage } from "../data/storyline.js"
 
 let page = []
 let clickCount = 0
-let timeLeft = 5
+let timeLeft 
+
 
 
 // * Chached Element References:
 
 const messageEl = document.getElementById('message')
-// const optOneP = document.getElementById('option-one')
-// const optTwoP = document.getElementById('option-two')
-// const containerOne = document.getElementById('container-one')
-// const containerTwo = document.getElementById('container-two')
 const containerBlock = document.getElementById('container-block')
+// const cliffButton = document.getElementById('cliff-button')
 
 
 // * Event Listeners:
 
-// containerOne.addEventListener('click', console.log('containerOne clicked'))
 containerBlock.addEventListener('click', handleClick)
 containerBlock.addEventListener('click', restartGame)
-containerBlock.addEventListener('click', climb)
+// containerBlock.addEventListener('click', climb)
 
 // * Functions:
 
 function init() {
     generateContent()
-    // let nextPageArr = page[0].next
-    // console.log(nextPageArr)
     render()
-    // messageEl.textContent = page[0].message
-    // optOneP.textContent = page[0].optOne
-    // optTwoP.textContent = page[0].optTwo
 }
 
 init()
@@ -53,11 +45,10 @@ function render() {
     containerBlock.innerHTML = ''
     appendOptions()
     updateMessage()
-    // cliffOutcome()
 }
 
 function appendOptions() { 
-    if (page[page.length -1].optOne !== null) {
+    if (typeof page[page.length -1].optOne === 'string') {
         optOneContent()
     }
     if (page[page.length -1].optOne === null) {
@@ -69,27 +60,23 @@ function appendOptions() {
     if (page[page.length -1].optOne === 1) {
         cliff()
     }
-    if (page[page.length -1].optTwo !== undefined) {
+    if (typeof page[page.length -1].optTwo === 'string') {
         optTwoContent()
     }
 }
 
+
 function updateMessage() {
     messageEl.textContent = page[page.length -1].message
 }
-
+console.log(page)
 function handleClick(evt) {
     if (evt.target.id === 'container-one') {
         console.log('you clicked on container-one')
-        // console.log(nextPage(page[0].next[0]))
-        // page = nextPage(page[page.length -1].next[0])
         page.push(nextPage(page[page.length -1].next[0]))
-        // console.log(page)
     } else if (evt.target.id === 'container-two') {
         console.log('you clicked on container-two')
-        // page = nextPage(page[page.length -1].next[1])
         page.push(nextPage(page[page.length -1].next[1]))
-        // console.log(page)
     }
     render()
 }
@@ -103,15 +90,16 @@ function restartGame(evt) {
     }
 }
 
-function climb(evt) {
-    if (evt.target.id === 'cliff-button') {
-        clickCount ++
-    }
-    console.log(clickCount)
+function climb() {
+    // if (evt.target.id === 'cliff-button') {
+    //     clickCount ++
+    // }
+    // console.log(clickCount)
+    clickCount ++
 }
 
 function cliff() {
-    containerBlock.innerHTML = ''
+    // containerBlock.innerHTML = ''
     let containerOne = document.createElement('div')
     containerOne.className = 'container'
     containerOne.innerHTML = 
@@ -121,23 +109,50 @@ function cliff() {
             <button id='cliff-button'>Climb!</button>
         </div>`
     containerBlock.appendChild(containerOne)
+    const cliffButton = document.getElementById('cliff-button')
+    cliffButton.addEventListener('click', climb)
+    console.log(cliffButton)
+    console.log(clickCount)
 
     cliffOutcome()
+
 }
 
 function cliffOutcome() {
     let countdownEl = document.getElementById('countdown')
-    
+    timeLeft = 5
     let timer = setInterval(function() {
         countdownEl.textContent = timeLeft + ' seconds remaining.';
         timeLeft -= 1;
-        if (timeLeft < 0 && clickCount >= 5) {
-            page.push(nextPage(page[page.length -1].next[0]))
-        }
-        else {
-            page.push(nextPage(page[page.length -1].next[1]))
+        if (timeLeft === -1) {
+            countdownEl.textContent = ''
+            // clearInterval(timer)
         }
     }, 1000)
+    // clearInterval(timer)
+    let timeout = setTimeout(() => {
+        // if (clickCount >= 5) {
+        //     // page.push(nextPage(page[page.length -1].next[0]))
+        //     console.log(nextPage(page[page.length -1].next[0]))
+        //     // clearTimeout(timer)
+        // }
+        // else {
+        //     page.push(nextPage(page[page.length -1].next[1]))
+        // }
+        clearInterval(timer)
+        console.log(timeLeft)
+    }, 6000);
+    clearTimeout(timeout)
+    // setTimeout(() => {
+    //     if (clickCount >= 5) {
+    //         // page.push(nextPage(page[page.length -1].next[0]))
+    //         console.log(nextPage(page[page.length -1].next[0]))
+    //         // clearTimeout(timer)
+    //     }
+    //     else {
+    //         page.push(nextPage(page[page.length -1].next[1]))
+    //     }
+    // }, 6000);
 }
 
 function optOneContent() {
@@ -164,7 +179,7 @@ function dead() {
 }
 
 function giveUp() {
-    containerBlock.innerHTML = ''
+    // containerBlock.innerHTML = ''
         let containerOne = document.createElement('div')
         containerOne.className = 'container'
         containerOne.innerHTML = 
