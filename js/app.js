@@ -59,6 +59,9 @@ function appendOptions() {
     if (page[page.length -1].optOne === 1) {
         cliff()
     }
+    if (page[page.length -1].optOne === 2) {
+        boat()
+    }
     if (typeof page[page.length -1].optTwo === 'string') {
         optTwoContent()
     }
@@ -136,6 +139,53 @@ function cliffOutcome() {
             }
             render()
             let containerToRemove = document.getElementById('cliff-container')
+            bodyEl.removeChild(containerToRemove)
+        }
+    }, 1000)
+}
+
+function boat() {
+    let boatContainer = document.createElement('div')
+    boatContainer.className = 'container'
+    boatContainer.id = 'boat-container'
+    boatContainer.innerHTML = 
+        `<h2>Hurry! Click as many times as you can to row away from the waterfall!</h2>
+        <div id='countdown'>5</div>
+        <div class='boat-btn-div'>
+        <button id='boat-button'>Row!</button>
+        <div>`
+    bodyEl.appendChild(boatContainer)
+    const boatButton = document.getElementById('boat-button')
+    clickCount = 0
+    boatButton.addEventListener('click', climb)
+    boatOutcome()
+}
+
+function boatOutcome() {
+    let countdownEl = document.getElementById('countdown')
+    timeLeft = 4
+    let timer = setInterval(function() {
+        countdownEl.textContent = timeLeft ;
+        timeLeft -= 1;
+        if (timeLeft === -1) {
+            countdownEl.textContent = ''
+        }
+        if (timeLeft === -1) {
+            clearInterval(timer)
+            if (clickCount >= 28) {
+                page.push(nextPage(page[page.length -1].next[3]))
+            }
+            if (clickCount >= 15 && clickCount < 28) {
+                page.push(nextPage(page[page.length -1].next[0]))
+            }
+            if (clickCount >= 10 && clickCount < 15) {
+                page.push(nextPage(page[page.length -1].next[2]))
+            }
+            if (clickCount < 10) {
+                page.push(nextPage(page[page.length -1].next[1]))
+            }
+            render()
+            let containerToRemove = document.getElementById('boat-container')
             bodyEl.removeChild(containerToRemove)
         }
     }, 1000)

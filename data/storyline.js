@@ -16,7 +16,7 @@ const storyline = [
     },
     {
         page: 2,
-        message: 'You were surrounded by goblins and killed!',
+        message: 'You were surrounded and killed!',
         optOne: null,
         optTwo: undefined,
         next: []
@@ -72,17 +72,17 @@ const storyline = [
     },
     {
         page: 10,
-        message: 'NOOO!!! You fell to an untimely demise!',
-        optOne: null,
+        message: 'The current in the water is strong, and you find yourself hurtling towards a waterfall you failed to notice in your exhaustion!',
+        optOne: 2,
         optTwo: undefined,
-        next: [ ]
+        next: [17, 5, 18, 19]
     },
     {
         page: 11,
-        message: "",
-        optOne: "",
-        optTwo: "",
-        next: [ ]
+        message: "At the base of the bridge you find a sword and a shield, warily you pick it up. Half-way across, you find yourself surrounded by thieves!",
+        optOne: "Fight the vagabonds? You have a weapon now!",
+        optTwo: "Run for your life!",
+        next: [17, 2]
     },
     {
         page: 12,
@@ -115,6 +115,62 @@ const storyline = [
     {
         page: 16,
         message: "With the strength of a god you climb up through the abyss to heights unknown. Beyond imagining you reach the highest pinnacle, light your torch, and find yourself in the tallest tower of the castle. Before you lies a mysterious portal.",
+        optOne: "Jump through the portal! Adventure awaits!",
+        optTwo: "Wait, wait, wait. A PORTAL?? After just escaping death? Let's take the stairs!",
+        next: [0, 0]
+    },
+    {
+        page: 17,
+        message: "Out of breath, you successfully reach the other side of the water!",
+        optOne: "",
+        optTwo: "",
+        next: [ ]
+    },
+    {
+        page: 18,
+        message: "You didn't row hard enough! You find yourself plummeting over the waterfall! At the last minute, you jump out of the boat to a ledge.",
+        optOne: "",
+        optTwo: "",
+        next: [ ]
+    },
+    {
+        page: 19,
+        message: "You overshot the end of the bridge, and find yourself floating down an eerie river",
+        optOne: "",
+        optTwo: "",
+        next: [ ]
+    },
+    {
+        page: 20,
+        message: "",
+        optOne: "",
+        optTwo: "",
+        next: [ ]
+    },
+    {
+        page: 21,
+        message: "",
+        optOne: "",
+        optTwo: "",
+        next: [ ]
+    },
+    {
+        page: 22,
+        message: "",
+        optOne: "",
+        optTwo: "",
+        next: [ ]
+    },
+    {
+        page: 23,
+        message: "",
+        optOne: "",
+        optTwo: "",
+        next: [ ]
+    },
+    {
+        page: 24,
+        message: "",
         optOne: "",
         optTwo: "",
         next: [ ]
@@ -130,7 +186,7 @@ const storyline = [
 //     next: [ ]
 // },
 
-// * option values other than str: null=dead, 0=gaveUp, 1=cliff
+// * option values other than str: null=dead, 0=gaveUp, 1=cliff, 2=boat
 // * page 3 is initial gave up page
 
 function startPage() {
