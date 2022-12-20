@@ -114,7 +114,7 @@ const storyline = [
     },
     {
         page: 16,
-        message: "",
+        message: "With the strength of a god you climb up through the abyss to heights unknown. Beyond imagining you reach the highest pinnacle, light your torch, and find yourself in the tallest tower of the castle. Before you lies a mysterious portal.",
         optOne: "",
         optTwo: "",
         next: [ ]
