@@ -9,10 +9,10 @@ const storyline = [
 
     {
         page: 1,
-        message: 'It seems the castle is built like a maze, but parts of it are crumbling. It might be dangerous! Up ahead you find a fire-lit hall and a dark hall.',
+        message: 'It seems the castle is built like a maze, but parts of it are crumbling. It might be dangerous! Up ahead you find two hallways.',
         optOne: 'Take the well lit route?',
         optTwo: 'Risk the dark path and hope for light at the end of the tunnel!',
-        next: [2, 4]
+        next: [2, 6]
     },
     {
         page: 2,
@@ -37,6 +37,48 @@ const storyline = [
     },
     {
         page: 5,
+        message: 'NOOO!!! You fell to an untimely demise!',
+        optOne: null,
+        optTwo: undefined,
+        next: [ ]
+    },
+    {
+        page: 6,
+        message: "You've been going for a while now and still no light, you found a torch, and you can hear something moving... Maybe water? ",
+        optOne: "Light the torch. It's SO dark!",
+        optTwo: "Keep going just a little bit further. There has to be an end to this, and you don't like the feeling of things watching you.",
+        next: [7, 4]
+    },
+    {
+        page: 7,
+        message: 'You light the torch to find yourself face-to-face with a monstrous wolf!',
+        optOne: 'Fight for your life!',
+        optTwo: 'Run for an escape! Hurry!',
+        next: [8, 9]
+    },
+    {
+        page: 8,
+        message: 'The wolf tore you to shreds. What were you thinking trying to fight without a weapon?',
+        optOne: null,
+        optTwo: undefined,
+        next: [ ]
+    },
+    {
+        page: 9,
+        message: 'With your torchlight you find a diverging tunnel and dive through away from the wolf!',
+        optOne: null,
+        optTwo: undefined,
+        next: [ ]
+    },
+    {
+        page: 10,
+        message: 'NOOO!!! You fell to an untimely demise!',
+        optOne: null,
+        optTwo: undefined,
+        next: [ ]
+    },
+    {
+        page: 11,
         message: 'NOOO!!! You fell to an untimely demise!',
         optOne: null,
         optTwo: undefined,

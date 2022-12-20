@@ -19,14 +19,12 @@ let timeLeft
 const messageEl = document.getElementById('message')
 const containerBlock = document.getElementById('container-block')
 const bodyEl = document.querySelector('body')
-// const cliffButton = document.getElementById('cliff-button')
 
 
 // * Event Listeners:
 
 containerBlock.addEventListener('click', handleClick)
 containerBlock.addEventListener('click', restartGame)
-// containerBlock.addEventListener('click', climb)
 
 // * Functions:
 
@@ -60,7 +58,6 @@ function appendOptions() {
     }
     if (page[page.length -1].optOne === 1) {
         cliff()
-        // cliffOutcome()
     }
     if (typeof page[page.length -1].optTwo === 'string') {
         optTwoContent()
@@ -71,15 +68,13 @@ function appendOptions() {
 function updateMessage() {
     messageEl.textContent = page[page.length -1].message
 }
-// console.log(page)
+
 
 function handleClick(evt) {
     if (evt.target.id === 'container-one') {
-        console.log('you clicked on container-one')
         page.push(nextPage(page[page.length -1].next[0]))
     } 
     if (evt.target.id === 'container-two') {
-        console.log('you clicked on container-two')
         page.push(nextPage(page[page.length -1].next[1]))
     }
     render()
@@ -96,15 +91,10 @@ function restartGame(evt) {
 }
 
 function climb() {
-    // if (evt.target.id === 'cliff-button') {
-    //     clickCount ++
-    // }
-    // console.log(clickCount)
     clickCount ++
 }
 
 function cliff() {
-    // containerBlock.innerHTML = ''
     let cliffContainer = document.createElement('div')
     cliffContainer.className = 'container'
     cliffContainer.id = 'cliff-container'
@@ -118,11 +108,7 @@ function cliff() {
     const cliffButton = document.getElementById('cliff-button')
     clickCount = 0
     cliffButton.addEventListener('click', climb)
-    // console.log(cliffButton)
-    // console.log(clickCount)
-
     cliffOutcome()
-    
 }
 
 function cliffOutcome() {
@@ -134,7 +120,6 @@ function cliffOutcome() {
         if (timeLeft === -1) {
             countdownEl.textContent = ''
         }
-        console.log(timeLeft)
         if (timeLeft === -1) {
             clearInterval(timer)
             if (clickCount >= 5) {
@@ -148,8 +133,6 @@ function cliffOutcome() {
             bodyEl.removeChild(containerToRemove)
         }
     }, 1000)
-
-    
 }
 
 function optOneContent() {
@@ -176,7 +159,6 @@ function dead() {
 }
 
 function giveUp() {
-    // containerBlock.innerHTML = ''
         let containerOne = document.createElement('div')
         containerOne.className = 'container'
         containerOne.innerHTML = 
