@@ -33,7 +33,7 @@ const storyline = [
         message: 'You find yourself falling into nothing, reach out... And now are dangling from the edge of a cliff!!!',
         optOne: 1,
         optTwo: undefined,
-        next: [0, 5]
+        next: [12, 5, 13]
     },
     {
         page: 5,
@@ -85,28 +85,28 @@ const storyline = [
         next: [ ]
     },
     {
-        page: 11,
+        page: 12,
+        message: "You managed to climb the ledge of the cliff, light your torch, and approach a water filled cavern. Close to you is a boat, on the far end of the cavern is a bridge leading across the water.",
+        optOne: "Take the boat? You're tired and keen to get someplace safe as fast as posible.",
+        optTwo: "Go the long way? You aren't sure if you can paddle after climbing that much.",
+        next: [10, 11]
+    },
+    {
+        page: 13,
+        message: "You slide further down, but in the nick of time catch another ledge, climb up, and light your torch.",
+        optOne: "",
+        optTwo: "",
+        next: [14, 15]
+    },
+    {
+        page: 14,
         message: "",
         optOne: "",
         optTwo: "",
         next: [ ]
     },
     {
-        page: 11,
-        message: "",
-        optOne: "",
-        optTwo: "",
-        next: [ ]
-    },
-    {
-        page: 11,
-        message: "",
-        optOne: "",
-        optTwo: "",
-        next: [ ]
-    },
-    {
-        page: 11,
+        page: 15,
         message: "",
         optOne: "",
         optTwo: "",

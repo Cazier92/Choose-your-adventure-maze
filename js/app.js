@@ -125,8 +125,11 @@ function cliffOutcome() {
             if (clickCount >= 15) {
                 page.push(nextPage(page[page.length -1].next[0]))
             }
-            if (clickCount < 15) {
+            if (clickCount < 10) {
                 page.push(nextPage(page[page.length -1].next[1]))
+            }
+            if (clickCount >= 10 && clickCount < 15) {
+                page.push(nextPage(page[page.length -1].next[2]))
             }
             render()
             let containerToRemove = document.getElementById('cliff-container')
