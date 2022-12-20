@@ -86,8 +86,8 @@ const storyline = [
     },
     {
         page: 12,
-        message: "You managed to climb the ledge of the cliff, light your torch, and approach a water filled cavern. Close to you is a boat, on the far end of the cavern is a bridge leading across the water.",
-        optOne: "Take the boat? You're tired and keen to get someplace safe as fast as posible.",
+        message: "You managed to climb the ledge of the cliff, light your torch, and approach a water filled cavern. Close to you is a row of boats, on the far end of the cavern is a bridge leading across the water.",
+        optOne: "Take a boat? You're tired and keen to get someplace safe as fast as posible.",
         optTwo: "Go the long way? You aren't sure if you can paddle after climbing that much.",
         next: [10, 11]
     },
@@ -128,10 +128,10 @@ const storyline = [
     },
     {
         page: 18,
-        message: "You didn't row hard enough! You find yourself plummeting over the waterfall! At the last minute, you jump out of the boat to a ledge.",
-        optOne: "",
-        optTwo: "",
-        next: [ ]
+        message: "You didn't row hard enough! You find yourself plummeting over the waterfall! At the last minute, you jump out of the boat onto a ledge. Now without a torch...",
+        optOne: "Dive into the water, hoping the bottom isn't to far... Or rocky?",
+        optTwo: "Search in the dark for another way out?",
+        next: [5, 23]
     },
     {
         page: 19,
@@ -163,6 +163,41 @@ const storyline = [
     },
     {
         page: 23,
+        message: "As you press on the ground begins to crumble beneath your feet! Trapped on a small, collapsing sliver of land in the dark, you have no choice but to climb!",
+        optOne: 1,
+        optTwo: undefined,
+        next: [12, 5, 13, 16]
+    },
+    {
+        page: 24,
+        message: "",
+        optOne: "",
+        optTwo: "",
+        next: [ ]
+    },
+    {
+        page: 24,
+        message: "",
+        optOne: "",
+        optTwo: "",
+        next: [ ]
+    },
+    {
+        page: 24,
+        message: "",
+        optOne: "",
+        optTwo: "",
+        next: [ ]
+    },
+    {
+        page: 24,
+        message: "",
+        optOne: "",
+        optTwo: "",
+        next: [ ]
+    },
+    {
+        page: 24,
         message: "",
         optOne: "",
         optTwo: "",
