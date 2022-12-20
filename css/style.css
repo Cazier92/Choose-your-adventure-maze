@@ -44,7 +44,7 @@ h1 {
 
 }
 
-/* #cliff-container {
-    display: flex;
-    flex-direction: column;
-} */
+#countdown {
+    margin: 20px;
+    padding: 20px;
+}

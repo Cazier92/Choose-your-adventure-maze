@@ -110,7 +110,7 @@ function cliff() {
     cliffContainer.id = 'cliff-container'
     cliffContainer.innerHTML = 
         `<h2>Hurry! Click to climb the cliff!</h2>
-        <div id='countdown'></div>
+        <div id='countdown'>5</div>
         <div class='cliff-btn-div'>
         <button id='cliff-button'>Climb!</button>
         <div>`
@@ -127,9 +127,9 @@ function cliff() {
 
 function cliffOutcome() {
     let countdownEl = document.getElementById('countdown')
-    timeLeft = 5
+    timeLeft = 4
     let timer = setInterval(function() {
-        countdownEl.textContent = timeLeft + ' seconds remaining.';
+        countdownEl.textContent = timeLeft ;
         timeLeft -= 1;
         if (timeLeft === -1) {
             countdownEl.textContent = ''
