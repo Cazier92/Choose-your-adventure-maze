@@ -99,7 +99,7 @@ function cliff() {
     cliffContainer.className = 'container'
     cliffContainer.id = 'cliff-container'
     cliffContainer.innerHTML = 
-        `<h2>Hurry! Click to climb the cliff!</h2>
+        `<h2>Hurry! Click as many times as you can to climb the cliff!</h2>
         <div id='countdown'>5</div>
         <div class='cliff-btn-div'>
         <button id='cliff-button'>Climb!</button>
@@ -122,10 +122,10 @@ function cliffOutcome() {
         }
         if (timeLeft === -1) {
             clearInterval(timer)
-            if (clickCount >= 5) {
+            if (clickCount >= 15) {
                 page.push(nextPage(page[page.length -1].next[0]))
             }
-            if (clickCount < 5) {
+            if (clickCount < 15) {
                 page.push(nextPage(page[page.length -1].next[1]))
             }
             render()

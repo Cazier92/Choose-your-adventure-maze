@@ -30,7 +30,7 @@ const storyline = [
     },
     {
         page: 4,
-        message: 'You slipped and are dangling from the edge of a cliff!!!',
+        message: 'You find yourself falling into nothing, reach out... And now are dangling from the edge of a cliff!!!',
         optOne: 1,
         optTwo: undefined,
         next: [0, 5]
@@ -45,8 +45,8 @@ const storyline = [
     {
         page: 6,
         message: "You've been going for a while now and still no light, you found a torch, and you can hear something moving... Maybe water? ",
-        optOne: "Light the torch. It's SO dark!",
-        optTwo: "Keep going just a little bit further. There has to be an end to this, and you don't like the feeling of things watching you.",
+        optOne: "Light the torch? It's SO dark!",
+        optTwo: "Keep going just a little bit further? There has to be an end to this, and you don't like the feeling of things watching you.",
         next: [7, 4]
     },
     {
@@ -65,10 +65,10 @@ const storyline = [
     },
     {
         page: 9,
-        message: 'With your torchlight you find a diverging tunnel and dive through away from the wolf!',
-        optOne: null,
-        optTwo: undefined,
-        next: [ ]
+        message: 'With your torchlight you find a diverging tunnel and dive through away from the wolf! Following it through you find yourself in a water filled cavern. Close to you is a boat, on the far end of the cavern is a bridge leading across the water.',
+        optOne: "Take the boat? You're tired and keen to get someplace safe as fast as posible.",
+        optTwo: "Go the long way? After the wolf you're wary of things lurking in the deep.",
+        next: [10, 11]
     },
     {
         page: 10,
@@ -79,13 +79,49 @@ const storyline = [
     },
     {
         page: 11,
-        message: 'NOOO!!! You fell to an untimely demise!',
-        optOne: null,
-        optTwo: undefined,
+        message: "",
+        optOne: "",
+        optTwo: "",
+        next: [ ]
+    },
+    {
+        page: 11,
+        message: "",
+        optOne: "",
+        optTwo: "",
+        next: [ ]
+    },
+    {
+        page: 11,
+        message: "",
+        optOne: "",
+        optTwo: "",
+        next: [ ]
+    },
+    {
+        page: 11,
+        message: "",
+        optOne: "",
+        optTwo: "",
+        next: [ ]
+    },
+    {
+        page: 11,
+        message: "",
+        optOne: "",
+        optTwo: "",
         next: [ ]
     },
         
 ]
+
+// {
+//     page: 11,
+//     message: "",
+//     optOne: "",
+//     optTwo: "",
+//     next: [ ]
+// },
 
 // * option values other than str: null=dead, 0=gaveUp, 1=cliff
 // * page 3 is initial gave up page
