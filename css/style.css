@@ -38,4 +38,13 @@ h1 {
     color: black;
 }
 
+.cliff-btn-div {
+    /* align-self: flex-end; */
+    margin-top: 100px;
 
+}
+
+/* #cliff-container {
+    display: flex;
+    flex-direction: column;
+} */

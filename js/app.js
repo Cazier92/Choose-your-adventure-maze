@@ -18,6 +18,7 @@ let timeLeft
 
 const messageEl = document.getElementById('message')
 const containerBlock = document.getElementById('container-block')
+const bodyEl = document.querySelector('body')
 // const cliffButton = document.getElementById('cliff-button')
 
 
@@ -59,6 +60,7 @@ function appendOptions() {
     }
     if (page[page.length -1].optOne === 1) {
         cliff()
+        // cliffOutcome()
     }
     if (typeof page[page.length -1].optTwo === 'string') {
         optTwoContent()
@@ -69,17 +71,20 @@ function appendOptions() {
 function updateMessage() {
     messageEl.textContent = page[page.length -1].message
 }
-console.log(page)
+// console.log(page)
+
 function handleClick(evt) {
     if (evt.target.id === 'container-one') {
         console.log('you clicked on container-one')
         page.push(nextPage(page[page.length -1].next[0]))
-    } else if (evt.target.id === 'container-two') {
+    } 
+    if (evt.target.id === 'container-two') {
         console.log('you clicked on container-two')
         page.push(nextPage(page[page.length -1].next[1]))
     }
     render()
 }
+
 function restartGame(evt) {
     if (evt.target.id === 'yes-button') {
         init()
@@ -100,22 +105,24 @@ function climb() {
 
 function cliff() {
     // containerBlock.innerHTML = ''
-    let containerOne = document.createElement('div')
-    containerOne.className = 'container'
-    containerOne.innerHTML = 
+    let cliffContainer = document.createElement('div')
+    cliffContainer.className = 'container'
+    cliffContainer.innerHTML = 
         `<div id="cliff-container" class="container">
             <h2>Hurry! Click to climb the cliff!</h2>
             <div id='countdown'></div>
+            <div class='cliff-btn-div'>
             <button id='cliff-button'>Climb!</button>
+            <div>
         </div>`
-    containerBlock.appendChild(containerOne)
+    bodyEl.appendChild(cliffContainer)
     const cliffButton = document.getElementById('cliff-button')
     cliffButton.addEventListener('click', climb)
-    console.log(cliffButton)
-    console.log(clickCount)
+    // console.log(cliffButton)
+    // console.log(clickCount)
 
     cliffOutcome()
-
+    
 }
 
 function cliffOutcome() {
@@ -126,23 +133,40 @@ function cliffOutcome() {
         timeLeft -= 1;
         if (timeLeft === -1) {
             countdownEl.textContent = ''
-            // clearInterval(timer)
+        }
+        console.log(timeLeft)
+        if (timeLeft === -1) {
+            clearInterval(timer)
+            if (clickCount >= 5) {
+                page.push(nextPage(page[page.length -1].next[0]))
+            }
+            if (clickCount < 5) {
+                page.push(nextPage(page[page.length -1].next[1]))
+            }
+            render()
+            bodyEl.removeChild(cliffContainer)
         }
     }, 1000)
     // clearInterval(timer)
-    let timeout = setTimeout(() => {
-        // if (clickCount >= 5) {
-        //     // page.push(nextPage(page[page.length -1].next[0]))
-        //     console.log(nextPage(page[page.length -1].next[0]))
-        //     // clearTimeout(timer)
-        // }
-        // else {
-        //     page.push(nextPage(page[page.length -1].next[1]))
-        // }
-        clearInterval(timer)
-        console.log(timeLeft)
-    }, 6000);
-    clearTimeout(timeout)
+    // let timeout = setTimeout(() => {
+    //     // if (clickCount >= 5) {
+    //         // page.push(nextPage(page[page.length -1].next[0]))
+    //         //     console.log(nextPage(page[page.length -1].next[0]))
+    //         //     // clearTimeout(timer)
+    //         // }
+    //         // else {
+    //             //     page.push(nextPage(page[page.length -1].next[1]))
+    //             // }
+    //             clearInterval(timer)
+    //             console.log(timeLeft)
+    //         }, 6000);
+    //         clearTimeout(timeout)
+    //         console.log(timeLeft)
+    //         if (timeLeft = 0 && clickCount >= 5) {
+    //             page.push(nextPage(page[page.length -1].next[0]))
+    //         } else if (timeLeft = 0) {
+    //             page.push(nextPage(page[page.length -1].next[1]))
+    //         }
     // setTimeout(() => {
     //     if (clickCount >= 5) {
     //         // page.push(nextPage(page[page.length -1].next[0]))
