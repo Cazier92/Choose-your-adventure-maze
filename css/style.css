@@ -11,7 +11,7 @@ html, body {
     /* background-color: #3F4B3B; */
     margin: 0px;
     background-image: url('../images/raph-howald-GSCtoEEqntQ-unsplash.jpg');
-    background-size: 2000px;
+    background-size: cover;
     height: 100%;
     width: 100%;
 
