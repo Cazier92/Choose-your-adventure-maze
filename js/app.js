@@ -194,49 +194,52 @@ function boatOutcome() {
 function optOneContent() {
     let containerOne = document.createElement('div')
     containerOne.className = 'container'
+    containerOne.id = 'container-one'
     containerOne.innerHTML = 
-        `<div id="container-one" class="container">
-            <h2>Do You:</h2>
-            <p id="option-one" class="option-text">${page[page.length -1].optOne}</p>
-            <img src="${page[page.length -1].img[0]}" alt="">
-        </div>`
+        `
+        <h2>Do You:</h2>
+        <p id="option-one" class="option-text">${page[page.length -1].optOne}</p>
+        `
     containerBlock.appendChild(containerOne)
-    
 }
+            // <img src="${page[page.length -1].img[0]}" alt="">
 
 function dead() {
-    let containerOne = document.createElement('div')
-        containerOne.className = 'container'
-        containerOne.innerHTML = 
-            `<div id="dead-container" class="container">
-                <h2>You Died! Do you want to play again?</h2>
-                <button class='restart-buttons' id='yes-button'>Yes</button>
-                <button class= 'restart-buttons' id='no-button'>No</button>
-            </div>`
-        containerBlock.appendChild(containerOne)
+    let deadContainer = document.createElement('div')
+        deadContainer.className = 'container'
+        deadContainer.id = 'dead-container'
+        deadContainer.innerHTML = 
+            `
+            <h2>You Died! Do you want to play again?</h2>
+            <button class='restart-buttons' id='yes-button'>Yes</button>
+            <button class= 'restart-buttons' id='no-button'>No</button>
+            `
+        containerBlock.appendChild(deadContainer)
 }
 
 function giveUp() {
-        let containerOne = document.createElement('div')
-        containerOne.className = 'container'
-        containerOne.innerHTML = 
-            `<div id="gave-up-container" class="container">
+        let giveUpContainer = document.createElement('div')
+        giveUpContainer.className = 'container'
+        giveUpContainer.id = 'give-up-container'
+        giveUpContainer.innerHTML = 
+            `
             <h2>Would you like to go back?</h2>
             <button class='restart-buttons' id='yes-button'>Yes</button>
             <button class= 'restart-buttons' id='no-button'>No</button>
-            </div>`
-        containerBlock.appendChild(containerOne)
+            `
+        containerBlock.appendChild(giveUpContainer)
 }
 
 function optTwoContent() {
     let containerTwo = document.createElement('div')
         containerTwo.className = 'container'
+        containerTwo.id = 'container-two'
         containerTwo.innerHTML = 
-            `<div id="container-two" class="container">
-                <h2>Do You:</h2>
-                <p id="option-two" class="option-text">${page[page.length -1].optTwo}</p>
-                <img src="${page[page.length -1].img[1]}" alt="">
-            </div>`
+            `
+            <h2>Do You:</h2>
+            <p id="option-two" class="option-text">${page[page.length -1].optTwo}</p>
+            `
         containerBlock.appendChild(containerTwo)
 }
 
+                // <img src="${page[page.length -1].img[1]}" alt="">

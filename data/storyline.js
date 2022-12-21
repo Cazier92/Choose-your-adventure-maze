@@ -14,7 +14,7 @@ const storyline = [
         optOne: 'Take the well lit route?',
         optTwo: 'Risk the dark path and hope for light at the end of the tunnel!',
         next: [20, 6],
-        img: ['../images/torchlit_tunnel.jpeg', '../images/dark_tunnel.jpeg']
+        img: []
     },
     {
         page: 2,

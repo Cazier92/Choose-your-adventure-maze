@@ -34,6 +34,26 @@ h1 {
     border-radius: 10px;
 }
 
+#container-one {
+    background: rgb(182,193,151);
+    background: linear-gradient(90deg, rgba(182,193,151,1) 0%, rgba(213,221,188,1) 25%, rgba(250,235,215,1) 100%);
+}
+
+#container-two {
+    background: rgb(182,193,151);
+    background: linear-gradient(270deg, rgba(182,193,151,1) 0%, rgba(213,221,188,1) 25%, rgba(250,235,215,1) 100%);
+}
+
+#dead-container {
+    background: rgb(250,235,215);
+    background: radial-gradient(circle, rgba(250,235,215,1) 0%, rgba(213,221,188,1) 75%, rgba(182,193,151,1) 100%);
+}
+
+#gave-up-container {
+    background: rgb(250,235,215);
+    background: radial-gradient(circle, rgba(250,235,215,1) 0%, rgba(213,221,188,1) 75%, rgba(182,193,151,1) 100%);
+}
+
 .option-text {
     font-size: 20px;
     color: black;
@@ -49,8 +69,15 @@ h1 {
 #countdown {
     margin: 20px;
     padding: 20px;
+    color: an;
 }
 
 img {
     max-width: 200px;
+}
+
+@media screen and (max-width: 768px) {
+    #container-block {
+        flex-direction: column;
+    }
 }
