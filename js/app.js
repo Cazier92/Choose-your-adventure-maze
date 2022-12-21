@@ -235,6 +235,7 @@ function optTwoContent() {
             `<div id="container-two" class="container">
                 <h2>Do You:</h2>
                 <p id="option-two" class="option-text">${page[page.length -1].optTwo}</p>
+                <img src="${page[page.length -1].img[1]}" alt="">
             </div>`
         containerBlock.appendChild(containerTwo)
 }
