@@ -1,7 +1,7 @@
 const storyline = [
     {
         page: 0, 
-        message: 'You approach an ancient castle, what could be inside?', 
+        message: 'You discover ancient ruins, what could be inside?', 
         optOne: 'Go inside and explore!',
         optTwo: "Go home... It's been a long day...",
         next: [1, 3],
@@ -10,7 +10,7 @@ const storyline = [
 
     {
         page: 1,
-        message: 'It seems the castle is built like a maze, but parts of it are crumbling. It might be dangerous! Up ahead you find two hallways.',
+        message: 'It seems the ruins are built like a maze, but parts of it are crumbling. It might be dangerous! Up ahead you find two hallways.',
         optOne: 'Take the well lit route?',
         optTwo: 'Risk the dark path and hope for light at the end of the tunnel!',
         next: [20, 6],
@@ -106,17 +106,17 @@ const storyline = [
     },
     {
         page: 13,
-        message: "You slide further down, but in the nick of time catch another ledge, climb up, and light your torch.",
-        optOne: "",
-        optTwo: "",
-        next: [14, 15],
+        message: "You slide further down, but in the nick of time catch another ledge, climb up, and light your torch. You found a hidden room full of treasure!",
+        optOne: "Note the spot to come back to later, and go back up the cliff?",
+        optTwo: "Head home, treasure in hand?",
+        next: [4, 14],
         img: []
     },
     {
         page: 14,
-        message: "",
-        optOne: "",
-        optTwo: "",
+        message: "You found enough treasure to live off of for the rest of your life! As you leave, the entrance to the ruins collapses, and you will never know what other advenures you may have had.",
+        optOne: undefined,
+        optTwo: undefined,
         next: [ ],
         img: []
     },
@@ -130,7 +130,7 @@ const storyline = [
     },
     {
         page: 16,
-        message: "With the strength of a god you climb up through the abyss to heights unknown. Beyond imagining you reach the highest pinnacle, light your torch, and find yourself in the tallest tower of the castle. Before you lies a mysterious portal.",
+        message: "With the strength of a god you climb up through the abyss to heights unknown. Beyond imagining you reach the highest pinnacle, light your torch, and find yourself in the tallest tower of the ruins. Before you lies a mysterious portal.",
         optOne: "Jump through the portal! Adventure awaits!",
         optTwo: "Wait, wait, wait. A PORTAL?? After just escaping death? Let's take the stairs!",
         next: [0, 0],
@@ -155,9 +155,9 @@ const storyline = [
     {
         page: 19,
         message: "You overshot the end of the bridge, and find yourself floating down an eerie river",
-        optOne: "",
-        optTwo: "",
-        next: [ ],
+        optOne: "Go back the way you came?",
+        optTwo: "Follow the river through to see where it leads?",
+        next: [17, 24],
         img: []
     },
     {
@@ -194,6 +194,14 @@ const storyline = [
     },
     {
         page: 24,
+        message: "The river leads to an undergound portal!",
+        optOne: "Go through the portal?",
+        optTwo: "Return home? Enough adventuring for the day.",
+        next: [0, 3],
+        img: []
+    },
+    {
+        page: 25,
         message: "",
         optOne: "",
         optTwo: "",
@@ -201,7 +209,7 @@ const storyline = [
         img: []
     },
     {
-        page: 24,
+        page: 26,
         message: "",
         optOne: "",
         optTwo: "",
@@ -209,7 +217,7 @@ const storyline = [
         img: []
     },
     {
-        page: 24,
+        page: 27,
         message: "",
         optOne: "",
         optTwo: "",
@@ -217,7 +225,7 @@ const storyline = [
         img: []
     },
     {
-        page: 24,
+        page: 28,
         message: "",
         optOne: "",
         optTwo: "",
@@ -225,7 +233,7 @@ const storyline = [
         img: []
     },
     {
-        page: 24,
+        page: 29,
         message: "",
         optOne: "",
         optTwo: "",
@@ -233,15 +241,7 @@ const storyline = [
         img: []
     },
     {
-        page: 24,
-        message: "",
-        optOne: "",
-        optTwo: "",
-        next: [ ],
-        img: []
-    },
-    {
-        page: 24,
+        page: 30,
         message: "",
         optOne: "",
         optTwo: "",
