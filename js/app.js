@@ -74,10 +74,10 @@ function updateMessage() {
 
 
 function handleClick(evt) {
-    if (evt.target.id === 'container-one') {
+    if (evt.target.id === 'container-one' || evt.target.id === 'option-one') {
         page.push(nextPage(page[page.length -1].next[0]))
     } 
-    if (evt.target.id === 'container-two') {
+    if (evt.target.id === 'container-two' || evt. target.id === 'option-two') {
         page.push(nextPage(page[page.length -1].next[1]))
     }
     render()
@@ -193,7 +193,7 @@ function boatOutcome() {
 
 function optOneContent() {
     let containerOne = document.createElement('div')
-    containerOne.className = 'container'
+    containerOne.className = 'container' 
     containerOne.id = 'container-one'
     containerOne.innerHTML = 
         `
