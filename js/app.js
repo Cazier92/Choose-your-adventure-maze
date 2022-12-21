@@ -18,7 +18,8 @@ let timeLeft
 
 const messageEl = document.getElementById('message')
 const containerBlock = document.getElementById('container-block')
-const bodyEl = document.querySelector('body')
+const mainEl = document.querySelector('main')
+
 
 
 // * Event Listeners:
@@ -107,7 +108,7 @@ function cliff() {
         <div class='cliff-btn-div'>
         <button id='cliff-button'>Climb!</button>
         <div>`
-    bodyEl.appendChild(cliffContainer)
+    mainEl.appendChild(cliffContainer)
     const cliffButton = document.getElementById('cliff-button')
     clickCount = 0
     cliffButton.addEventListener('click', climb)
@@ -139,7 +140,7 @@ function cliffOutcome() {
             }
             render()
             let containerToRemove = document.getElementById('cliff-container')
-            bodyEl.removeChild(containerToRemove)
+            mainEl.removeChild(containerToRemove)
         }
     }, 1000)
 }
@@ -154,7 +155,7 @@ function boat() {
         <div class='boat-btn-div'>
         <button id='boat-button'>Row!</button>
         <div>`
-    bodyEl.appendChild(boatContainer)
+    mainEl.appendChild(boatContainer)
     const boatButton = document.getElementById('boat-button')
     clickCount = 0
     boatButton.addEventListener('click', climb)
@@ -186,7 +187,7 @@ function boatOutcome() {
             }
             render()
             let containerToRemove = document.getElementById('boat-container')
-            bodyEl.removeChild(containerToRemove)
+            mainEl.removeChild(containerToRemove)
         }
     }, 1000)
 }
@@ -202,7 +203,7 @@ function optOneContent() {
         `
     containerBlock.appendChild(containerOne)
 }
-            // <img src="${page[page.length -1].img[0]}" alt="">
+        // <img src="${page[page.length -1].img[0]}" alt="">
 
 function dead() {
     let deadContainer = document.createElement('div')
