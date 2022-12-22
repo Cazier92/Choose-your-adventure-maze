@@ -4,7 +4,7 @@ import { nextPage } from "../data/storyline.js"
 
 // * Constants:
 const timerAnimation = [
-    {transform: 'rotate(0) scale(3)'},
+    {transform: 'rotate(0) scale(2)'},
     {transform: 'rotate(360deg) scale(0)'},
 ]
 const timerAnimTiming = {
@@ -134,10 +134,10 @@ function cliffOutcome() {
         }
         if (timeLeft === -1) {
             clearInterval(timer)
-            if (clickCount >= 25) {
+            if (clickCount >= 20) {
                 page.push(nextPage(page[page.length -1].next[3]))
             }
-            if (clickCount >= 15 && clickCount < 25) {
+            if (clickCount >= 15 && clickCount < 20) {
                 page.push(nextPage(page[page.length -1].next[0]))
             }
             if (clickCount >= 10 && clickCount < 15) {
@@ -185,10 +185,10 @@ function boatOutcome() {
         }
         if (timeLeft === -1) {
             clearInterval(timer)
-            if (clickCount >= 25) {
+            if (clickCount >= 20) {
                 page.push(nextPage(page[page.length -1].next[3]))
             }
-            if (clickCount >= 15 && clickCount < 25) {
+            if (clickCount >= 15 && clickCount < 20) {
                 page.push(nextPage(page[page.length -1].next[0]))
             }
             if (clickCount >= 10 && clickCount < 15) {
