@@ -287,12 +287,12 @@ function fightOutcome() {
         }
         if (timeLeft === -1) {
             clearInterval(timer)
-            if (clickCount >= 10) {
+            if (clickCount >= 15) {
                 console.log(page[page.length-1])
                 page.push(nextPage(page[page.length -1].next[1]))
                 console.log(page[page.length-1])
             }
-            if (clickCount < 10) {
+            if (clickCount < 15) {
                 console.log(page[page.length-1])
                 page.push(nextPage(page[page.length -1].next[0]))
                 console.log(page[page.length-1])

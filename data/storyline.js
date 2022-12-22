@@ -106,7 +106,7 @@ const storyline = [
     },
     {
         page: 13,
-        message: "You slide further down, but in the nick of time catch another ledge, climb up, and light your torch. You found a hidden room full of treasure!",
+        message: "You slide further down, but in the nick of time catch another ledge, climb up, and light your torch. You found a hidden room with a small treasure chest!",
         optOne: "Note the spot to come back to later, and go back up the cliff?",
         optTwo: "Head home, treasure in hand?",
         next: [4, 14],
@@ -114,7 +114,7 @@ const storyline = [
     },
     {
         page: 14,
-        message: "You found enough treasure to live off of for the rest of your life! As you leave, the entrance to the ruins collapses, and you will never know what other advenures you may have had.",
+        message: "You found enough treasure supplement your income. Not really enough to live off of. As you leave, the entrance to the ruins collapses, and you will never know what other advenures you may have had.",
         optOne: undefined,
         optTwo: undefined,
         next: [ ],
@@ -141,7 +141,7 @@ const storyline = [
         message: "Out of breath, you successfully reach the other side of the water! But just as you thought you were safe, a serpent springs out of the water! You must fight for your life!!!",
         optOne: 4,
         optTwo: undefined,
-        next: [15, 0],
+        next: [15, 29],
         img: []
     },
     {
@@ -234,9 +234,9 @@ const storyline = [
     },
     {
         page: 29,
-        message: "",
-        optOne: "",
-        optTwo: "",
+        message: "Fighting valiantly, you smite off the serpent's head! Turning around You discover a hoard of treasures to take home. You're set for life!",
+        optOne: undefined,
+        optTwo: undefined,
         next: [ ],
         img: []
     },
