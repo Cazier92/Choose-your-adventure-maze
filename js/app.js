@@ -263,7 +263,7 @@ function fight() {
         `<h2>Hurry! Click on your sword to fight for your life!</h2>
         <div id='countdown'>7</div>
         <div class='sword-div'>
-        <img src="../images/sword-sticker.png" alt="image of a sword" id= 'sword-img'>
+        <img src="../assets/images/sword-sticker.png" alt="image of a sword" id= 'sword-img'>
         <div>`
     mainEl.appendChild(fightContainer)
     const sword = document.getElementById('sword-img')
