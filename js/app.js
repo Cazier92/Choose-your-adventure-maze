@@ -237,7 +237,7 @@ function optTwoContent() {
         containerTwo.id = 'container-two'
         containerTwo.innerHTML = 
             `
-            <h2>Do You:</h2>
+            <h2>Or Do You:</h2>
             <p id="option-two" class="option-text">${page[page.length -1].optTwo}</p>
             `
         containerBlock.appendChild(containerTwo)
