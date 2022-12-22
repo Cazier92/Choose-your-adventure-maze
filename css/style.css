@@ -96,6 +96,14 @@ h2 {
     background: radial-gradient(circle, rgba(250,235,215,1) 0%, rgba(213,221,188,1) 75%, rgba(182,193,151,1) 100%);
 }
 
+#cliff-container {
+    touch-action: manipulation;
+}
+
+#boat-container {
+    touch-action: manipulation;
+}
+
 .option-text {
     font-size: 20px;
     color: black;
