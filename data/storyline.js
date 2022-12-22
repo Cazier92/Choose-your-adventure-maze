@@ -226,7 +226,7 @@ const storyline = [
     },
     {
         page: 28,
-        message: "",
+        message: "You did it!",
         optOne: "",
         optTwo: "",
         next: [ ],

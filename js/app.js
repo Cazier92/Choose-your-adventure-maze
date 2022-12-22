@@ -176,7 +176,7 @@ function boat() {
 
 function boatOutcome() {
     let countdownEl = document.getElementById('countdown')
-    countdownEl.style.color = '#489FB5'
+    countdownEl.style.color = '#39A0ED'
     timeLeft = 4
     let timer = setInterval(function() {
         countdownEl.textContent = timeLeft ;
@@ -227,7 +227,7 @@ function portal() {
 
 function portalOutcome() {
     let countdownEl = document.getElementById('countdown')
-    countdownEl.style.color = '#B1740F'
+    countdownEl.style.color = 'yellow'
     timeLeft = 4
     let timer = setInterval(function() {
         countdownEl.textContent = timeLeft ;
@@ -240,10 +240,10 @@ function portalOutcome() {
         }
         if (timeLeft === -1) {
             clearInterval(timer)
-            if (clickCount >= 15) {
+            if (clickCount >= 10) {
                 page.push(nextPage(page[page.length -1].next[1]))
             }
-            if (clickCount < 15) {
+            if (clickCount < 10) {
                 page.push(nextPage(page[page.length -1].next[0]))
             }
             render()
