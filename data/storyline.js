@@ -133,7 +133,7 @@ const storyline = [
         message: "With the strength of a god you climb up through the abyss to heights unknown. Beyond imagining you reach the highest pinnacle, light your torch, and find yourself in the tallest tower of the ruins. Before you lies a mysterious portal.",
         optOne: "Jump through the portal! Adventure awaits!",
         optTwo: "Wait, wait, wait. A PORTAL?? After just escaping death? Let's take the stairs!",
-        next: [0, 0],
+        next: [0, 25],
         img: []
     },
     {
@@ -202,9 +202,9 @@ const storyline = [
     },
     {
         page: 25,
-        message: "",
-        optOne: "",
-        optTwo: "",
+        message: "You take the staircase down and find yourself in the ancient throne room! However it seems most things have been looted or destroyed already. The skeletal remains of warriors long past litter the floor. You go home, empty handed.",
+        optOne: undefined,
+        optTwo: undefined,
         next: [ ],
         img: []
     },

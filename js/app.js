@@ -124,6 +124,7 @@ function cliff() {
 
 function cliffOutcome() {
     let countdownEl = document.getElementById('countdown')
+    countdownEl.style.color = '#F71735'
     timeLeft = 4
     let timer = setInterval(function() {
         countdownEl.textContent = timeLeft ;
@@ -172,7 +173,7 @@ function boat() {
 
 function boatOutcome() {
     let countdownEl = document.getElementById('countdown')
-    countdownEl.style.color = 'blue'
+    countdownEl.style.color = '#489FB5'
     timeLeft = 4
     let timer = setInterval(function() {
         countdownEl.textContent = timeLeft ;
