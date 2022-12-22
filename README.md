@@ -15,7 +15,7 @@ Game will load in browser, no need to download anything!
 ![JAVASCRIPT](https://img.shields.io/badge/-Javascript-yellow)
 
 ## Future Enhancements:
-I've left this game open to the possibility of expansion, with the addition of extra mini-games and challenges as I progress along my own journey. Check back often to see what new adventure awaits!
+I've left this game open to the possibility of expansion, with the addition of extra mini-games and challenges, a travel journal/map, and health bars as I progress along my own journey. Check back often to see what new adventure awaits!
 
 
 

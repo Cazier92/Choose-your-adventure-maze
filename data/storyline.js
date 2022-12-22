@@ -114,7 +114,7 @@ const storyline = [
     },
     {
         page: 14,
-        message: "You found enough treasure supplement your income. Not really enough to live off of. As you leave, the entrance to the ruins collapses, and you will never know what other advenures you may have had.",
+        message: "You found enough treasure to supplement your income. Not really enough to live off of. As you leave, the entrance to the ruins collapses, and you will never know what other advenures you may have had.",
         optOne: undefined,
         optTwo: undefined,
         next: [ ],
