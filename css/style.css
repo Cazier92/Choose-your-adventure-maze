@@ -114,7 +114,8 @@ h2 {
 
 #countdown {
     color: red;
-    font-size: 45px;
+    font-size: 65px;
+
 }
 
 .option-text {
@@ -127,6 +128,10 @@ h2 {
     /* align-self: flex-end; */
     margin-top: 100px;
 
+}
+
+.boat-btn-div {
+    margin-top: 100px;
 }
 
 #countdown {

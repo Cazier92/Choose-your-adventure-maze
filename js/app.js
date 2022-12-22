@@ -3,7 +3,14 @@ import { nextPage } from "../data/storyline.js"
 
 
 // * Constants:
-
+const timerAnimation = [
+    {transform: 'rotate(0) scale(3)'},
+    {transform: 'rotate(360deg) scale(0)'},
+]
+const timerAnimTiming = {
+    duration: 1000,
+    iterations: 1
+}
 
 
 // * Variables:
@@ -120,6 +127,7 @@ function cliffOutcome() {
     timeLeft = 4
     let timer = setInterval(function() {
         countdownEl.textContent = timeLeft ;
+        countdownEl.animate(timerAnimation, timerAnimTiming)
         timeLeft -= 1;
         if (timeLeft === -1) {
             countdownEl.textContent = ''
@@ -164,10 +172,14 @@ function boat() {
 
 function boatOutcome() {
     let countdownEl = document.getElementById('countdown')
+    countdownEl.style.color = 'blue'
     timeLeft = 4
     let timer = setInterval(function() {
         countdownEl.textContent = timeLeft ;
+        countdownEl.animate(timerAnimation, timerAnimTiming)
         timeLeft -= 1;
+        countdownEl.style.animation = 'heartBeat'
+        countdownEl.style.animationDuration = '1s'
         if (timeLeft === -1) {
             countdownEl.textContent = ''
         }
