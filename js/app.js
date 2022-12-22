@@ -126,10 +126,10 @@ function cliffOutcome() {
         }
         if (timeLeft === -1) {
             clearInterval(timer)
-            if (clickCount >= 28) {
+            if (clickCount >= 25) {
                 page.push(nextPage(page[page.length -1].next[3]))
             }
-            if (clickCount >= 15 && clickCount < 28) {
+            if (clickCount >= 15 && clickCount < 25) {
                 page.push(nextPage(page[page.length -1].next[0]))
             }
             if (clickCount >= 10 && clickCount < 15) {
@@ -173,10 +173,10 @@ function boatOutcome() {
         }
         if (timeLeft === -1) {
             clearInterval(timer)
-            if (clickCount >= 28) {
+            if (clickCount >= 25) {
                 page.push(nextPage(page[page.length -1].next[3]))
             }
-            if (clickCount >= 15 && clickCount < 28) {
+            if (clickCount >= 15 && clickCount < 25) {
                 page.push(nextPage(page[page.length -1].next[0]))
             }
             if (clickCount >= 10 && clickCount < 15) {

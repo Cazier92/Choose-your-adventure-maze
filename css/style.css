@@ -97,11 +97,24 @@ h2 {
 }
 
 #cliff-container {
+    animation: heartBeat;
+    animation-duration: 1s;
     touch-action: manipulation;
+    background: rgb(250,235,215);
+    background: radial-gradient(circle, rgba(250,235,215,1) 0%, rgba(213,221,188,1) 75%, rgba(182,193,151,1) 100%);
 }
 
 #boat-container {
+    animation: heartBeat;
+    animation-duration: 1s;
+    background: rgb(250,235,215);
+    background: radial-gradient(circle, rgba(250,235,215,1) 0%, rgba(213,221,188,1) 75%, rgba(182,193,151,1) 100%);
     touch-action: manipulation;
+}
+
+#countdown {
+    color: red;
+    font-size: 45px;
 }
 
 .option-text {
