@@ -122,9 +122,9 @@ const storyline = [
     },
     {
         page: 15,
-        message: "",
-        optOne: "",
-        optTwo: "",
+        message: "NOOO!!! You were eaten alive!",
+        optOne: null,
+        optTwo: undefined,
         next: [ ],
         img: []
     },
@@ -138,10 +138,10 @@ const storyline = [
     },
     {
         page: 17,
-        message: "Out of breath, you successfully reach the other side of the water!",
-        optOne: "",
-        optTwo: "",
-        next: [ ],
+        message: "Out of breath, you successfully reach the other side of the water! But just as you thought you were safe, a serpent springs out of the water! You must fight for your life!!!",
+        optOne: 4,
+        optTwo: undefined,
+        next: [15, 0],
         img: []
     },
     {
@@ -259,7 +259,7 @@ const storyline = [
 //     next: [ ]
 // },
 
-// * option values other than str: null=dead, 0=gaveUp, 1=cliff, 2=boat, 3=portal
+// * option values other than str: null=dead, 0=gaveUp, 1=cliff, 2=boat, 3=portal, 4=fight
 // * page 3 is initial gave up page
 
 function startPage() {

@@ -42,9 +42,9 @@ h2 {
 }
 
 #message {
-    margin: 50px 200px;
+    margin: 50px 150px;
     color: antiquewhite;
-    font-size: 25px;
+    font-size: 26px;
     text-align: center;
     font-family: 'Fredericka the Great', cursive;
 }
@@ -64,6 +64,19 @@ h2 {
     background-color: #B6C197;
     text-align: center;
     border-radius: 10px;
+}
+
+.special-container {
+    width: 400px;
+    height: 400px;
+    background-color: #B6C197;
+    text-align: center;
+    border-radius: 10px;
+    background: rgb(250,235,215);
+    background: radial-gradient(circle, rgba(250,235,215,1) 0%, rgba(213,221,188,1) 75%, rgba(182,193,151,1) 100%);
+    animation: heartBeat;
+    animation-duration: 1s;
+    touch-action: manipulation;
 }
 
 #container-one {

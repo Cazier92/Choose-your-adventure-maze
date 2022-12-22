@@ -73,6 +73,9 @@ function appendOptions() {
     if (page[page.length -1].optOne === 3) {
         portal()
     }
+    if (page[page.length -1].optOne === 4) {
+        fight()
+    }
     if (typeof page[page.length -1].optTwo === 'string') {
         optTwoContent()
     }
@@ -106,11 +109,12 @@ function restartGame(evt) {
 
 function climb() {
     clickCount ++
+    console.log(clickCount)
 }
 
 function cliff() {
     let cliffContainer = document.createElement('div')
-    cliffContainer.className = 'container'
+    cliffContainer.className = 'special-container'
     cliffContainer.id = 'cliff-container'
     cliffContainer.innerHTML = 
         `<h2>Hurry! Click as many times as you can to climb the cliff!</h2>
@@ -159,7 +163,7 @@ function cliffOutcome() {
 
 function boat() {
     let boatContainer = document.createElement('div')
-    boatContainer.className = 'container'
+    boatContainer.className = 'special-container'
     boatContainer.id = 'boat-container'
     boatContainer.innerHTML = 
         `<h2>Hurry! Click as many times as you can to row away from the waterfall!</h2>
@@ -210,7 +214,7 @@ function boatOutcome() {
 
 function portal() {
     let portalContainer = document.createElement('div')
-    portalContainer.className = 'container'
+    portalContainer.className = 'special-container'
     portalContainer.id = 'portal-container'
     portalContainer.innerHTML = 
         `<h2>Hurry! Click as many times as you can to run from the decaying portal!</h2>
@@ -233,8 +237,6 @@ function portalOutcome() {
         countdownEl.textContent = timeLeft ;
         countdownEl.animate(timerAnimation, timerAnimTiming)
         timeLeft -= 1;
-        countdownEl.style.animation = 'heartBeat'
-        countdownEl.style.animationDuration = '1s'
         if (timeLeft === -1) {
             countdownEl.textContent = ''
         }
@@ -248,6 +250,55 @@ function portalOutcome() {
             }
             render()
             let containerToRemove = document.getElementById('portal-container')
+            mainEl.removeChild(containerToRemove)
+        }
+    }, 1000)
+}
+
+function fight() {
+    let fightContainer = document.createElement('div')
+    fightContainer.className = 'special-container'
+    fightContainer.id = 'fight-container'
+    fightContainer.innerHTML = 
+        `<h2>Hurry! Click on your sword to fight for your life!</h2>
+        <div id='countdown'>10</div>
+        <div class='sword-div'>
+        <img src="../images/sword-sticker.png" alt="image of a sword" id= 'sword-img'>
+        <div>`
+    mainEl.appendChild(fightContainer)
+    const sword = document.getElementById('sword-img')
+    sword.style.maxWidth = '100px'
+    clickCount = 0
+    sword.addEventListener('click', climb)
+    // console.log(clickCount)
+    fightOutcome()
+}
+
+function fightOutcome() {
+    let countdownEl = document.getElementById('countdown')
+    countdownEl.style.color = '#F71735'
+    timeLeft = 9
+    let timer = setInterval(function() {
+        countdownEl.textContent = timeLeft ;
+        countdownEl.animate(timerAnimation, timerAnimTiming)
+        timeLeft -= 1;
+        if (timeLeft === -1) {
+            countdownEl.textContent = ''
+        }
+        if (timeLeft === -1) {
+            clearInterval(timer)
+            if (clickCount >= 10) {
+                console.log(page[page.length-1])
+                page.push(nextPage(page[page.length -1].next[1]))
+                console.log(page[page.length-1])
+            }
+            if (clickCount < 10) {
+                console.log(page[page.length-1])
+                page.push(nextPage(page[page.length -1].next[0]))
+                console.log(page[page.length-1])
+            }
+            render()
+            let containerToRemove = document.getElementById('fight-container')
             mainEl.removeChild(containerToRemove)
         }
     }, 1000)
