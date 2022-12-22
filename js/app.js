@@ -261,7 +261,7 @@ function fight() {
     fightContainer.id = 'fight-container'
     fightContainer.innerHTML = 
         `<h2>Hurry! Click on your sword to fight for your life!</h2>
-        <div id='countdown'>10</div>
+        <div id='countdown'>7</div>
         <div class='sword-div'>
         <img src="../images/sword-sticker.png" alt="image of a sword" id= 'sword-img'>
         <div>`
@@ -277,7 +277,7 @@ function fight() {
 function fightOutcome() {
     let countdownEl = document.getElementById('countdown')
     countdownEl.style.color = '#F71735'
-    timeLeft = 9
+    timeLeft = 6
     let timer = setInterval(function() {
         countdownEl.textContent = timeLeft ;
         countdownEl.animate(timerAnimation, timerAnimTiming)
