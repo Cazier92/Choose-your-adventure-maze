@@ -319,7 +319,7 @@ function optOneContent() {
 
 function dead() {
     let deadContainer = document.createElement('div')
-        deadContainer.className = 'container'
+        deadContainer.className = 'special-container'
         deadContainer.id = 'dead-container'
         deadContainer.innerHTML = 
             `
@@ -332,7 +332,7 @@ function dead() {
 
 function giveUp() {
         let giveUpContainer = document.createElement('div')
-        giveUpContainer.className = 'container'
+        giveUpContainer.className = 'special-container'
         giveUpContainer.id = 'give-up-container'
         giveUpContainer.innerHTML = 
             `

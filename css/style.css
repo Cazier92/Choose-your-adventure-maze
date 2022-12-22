@@ -5,10 +5,8 @@ html {
 html, body {
     display: flex;
     flex-direction: column;
-    /* text-align: center; */
     justify-content: center;
     align-items: center;
-    /* background-color: #3F4B3B; */
     margin: 0px;
     background-image: url('../images/raph-howald-GSCtoEEqntQ-unsplash.jpg');
     background-size: cover;
@@ -22,8 +20,6 @@ main {
     margin: 0px;
     display: flex;
     flex-direction: column;
-    /* text-align: center; */
-    /* justify-content: center; */
     align-items: center;
     background-color: #3F4B3B;
     width: 75%;
@@ -51,10 +47,7 @@ h2 {
 
 #container-block {
     display: flex;
-    /* justify-content: space-between; */
     gap: 50px;
-    /* background-color: aquamarine; */
-    /* margin-left: 45px; */
     max-width: 95%;
 }
 
@@ -64,7 +57,7 @@ h2 {
     background-color: #B6C197;
     text-align: center;
     border-radius: 10px;
-    /* *box shaddows! */
+    
 }
 
 .special-container {
@@ -78,13 +71,13 @@ h2 {
     animation: heartBeat;
     animation-duration: 1s;
     touch-action: manipulation;
+    box-shadow:0 10px 15px 4px rgba(0, 0, 0, .8);
 }
 
 #container-one {
     background: rgb(182,193,151);
     background: linear-gradient(90deg, rgba(182,193,151,1) 0%, rgba(213,221,188,1) 25%, rgba(250,235,215,1) 100%);
-    /* animation: flipInY; */
-    /* animation-duration: 2s; */
+    box-shadow:-10px 10px 15px 4px rgba(0, 0, 0, .8);
 }
 
 #container-one:hover {
@@ -95,8 +88,7 @@ h2 {
 #container-two {
     background: rgb(182,193,151);
     background: linear-gradient(270deg, rgba(182,193,151,1) 0%, rgba(213,221,188,1) 25%, rgba(250,235,215,1) 100%);
-    /* animation: flipInY; */
-    /* animation-duration: 2s; */
+    box-shadow:10px 10px 15px 4px rgba(0, 0, 0, .8);
 }
 
 #container-two:hover {
@@ -104,7 +96,7 @@ h2 {
     animation-duration: 2s;
 }
 
-#dead-container {
+/* #dead-container {
     background: rgb(250,235,215);
     background: radial-gradient(circle, rgba(250,235,215,1) 0%, rgba(213,221,188,1) 75%, rgba(182,193,151,1) 100%);
 }
@@ -128,7 +120,7 @@ h2 {
     background: rgb(250,235,215);
     background: radial-gradient(circle, rgba(250,235,215,1) 0%, rgba(213,221,188,1) 75%, rgba(182,193,151,1) 100%);
     touch-action: manipulation;
-}
+} */
 
 #countdown {
     color: red;
@@ -144,9 +136,7 @@ h2 {
 }
 
 .cliff-btn-div {
-    /* align-self: flex-end; */
     margin-top: 100px;
-
 }
 
 .boat-btn-div {
