@@ -213,14 +213,14 @@ const storyline = [
         message: "As you step through the portal, ancient technology whirs around you, moving back time. But just as you land your feet in the past, it goes haywire! You need to run before it electrocutes you!!!",
         optOne: 3,
         optTwo: undefined,
-        next: [ ],
+        next: [27, 28],
         img: []
     },
     {
         page: 27,
-        message: "",
-        optOne: "",
-        optTwo: "",
+        message: "You didn't run fast enough and were shocked to death! And in the past... That's unfortunate. Who will discover your body?",
+        optOne: null,
+        optTwo: undefined,
         next: [ ],
         img: []
     },
