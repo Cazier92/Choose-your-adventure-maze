@@ -70,6 +70,9 @@ function appendOptions() {
     if (page[page.length -1].optOne === 2) {
         boat()
     }
+    if (page[page.length -1].optOne === 3) {
+        portal()
+    }
     if (typeof page[page.length -1].optTwo === 'string') {
         optTwoContent()
     }
@@ -200,6 +203,51 @@ function boatOutcome() {
             }
             render()
             let containerToRemove = document.getElementById('boat-container')
+            mainEl.removeChild(containerToRemove)
+        }
+    }, 1000)
+}
+
+function portal() {
+    let portalContainer = document.createElement('div')
+    portalContainer.className = 'container'
+    portalContainer.id = 'portal-container'
+    portalContainer.innerHTML = 
+        `<h2>Hurry! Click as many times as you can to run from the decaying portal!</h2>
+        <div id='countdown'>5</div>
+        <div class='portal-btn-div'>
+        <button id='portal-button'>Run!</button>
+        <div>`
+    mainEl.appendChild(portalContainer)
+    const portalButton = document.getElementById('portal-button')
+    clickCount = 0
+    portalButton.addEventListener('click', climb)
+    portalOutcome()
+}
+
+function portalOutcome() {
+    let countdownEl = document.getElementById('countdown')
+    countdownEl.style.color = '#B1740F'
+    timeLeft = 4
+    let timer = setInterval(function() {
+        countdownEl.textContent = timeLeft ;
+        countdownEl.animate(timerAnimation, timerAnimTiming)
+        timeLeft -= 1;
+        countdownEl.style.animation = 'heartBeat'
+        countdownEl.style.animationDuration = '1s'
+        if (timeLeft === -1) {
+            countdownEl.textContent = ''
+        }
+        if (timeLeft === -1) {
+            clearInterval(timer)
+            if (clickCount >= 15) {
+                page.push(nextPage(page[page.length -1].next[1]))
+            }
+            if (clickCount < 15) {
+                page.push(nextPage(page[page.length -1].next[0]))
+            }
+            render()
+            let containerToRemove = document.getElementById('portal-container')
             mainEl.removeChild(containerToRemove)
         }
     }, 1000)

@@ -133,7 +133,7 @@ const storyline = [
         message: "With the strength of a god you climb up through the abyss to heights unknown. Beyond imagining you reach the highest pinnacle, light your torch, and find yourself in the tallest tower of the ruins. Before you lies a mysterious portal.",
         optOne: "Jump through the portal! Adventure awaits!",
         optTwo: "Wait, wait, wait. A PORTAL?? After just escaping death? Let's take the stairs!",
-        next: [0, 25],
+        next: [26, 25],
         img: []
     },
     {
@@ -197,7 +197,7 @@ const storyline = [
         message: "The river leads to an undergound portal!",
         optOne: "Go through the portal?",
         optTwo: "Return home? Enough adventuring for the day.",
-        next: [0, 3],
+        next: [26, 3],
         img: []
     },
     {
@@ -210,9 +210,9 @@ const storyline = [
     },
     {
         page: 26,
-        message: "",
-        optOne: "",
-        optTwo: "",
+        message: "As you step through the portal, ancient technology whirs around you, moving back time. But just as you land your feet in the past, it goes haywire! You need to run before it electrocutes you!!!",
+        optOne: 3,
+        optTwo: undefined,
         next: [ ],
         img: []
     },
@@ -259,7 +259,7 @@ const storyline = [
 //     next: [ ]
 // },
 
-// * option values other than str: null=dead, 0=gaveUp, 1=cliff, 2=boat
+// * option values other than str: null=dead, 0=gaveUp, 1=cliff, 2=boat, 3=portal
 // * page 3 is initial gave up page
 
 function startPage() {
