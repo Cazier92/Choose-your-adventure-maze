@@ -1,6 +1,6 @@
 # Maze Raider
 
-## Game Deployment
+## Getting Started:
 Play [here!](https://bryce-cazier-maze.netlify.app/)
 
 Game will load in browser, no need to download anything!
