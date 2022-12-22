@@ -1,6 +1,6 @@
 # Maze Raider
 
-[Play](https://bryce-cazier-maze.netlify.app/) here!
+Play [here!](https://bryce-cazier-maze.netlify.app/)
 
 ![screenshot of game load page](./images/Maze-Raider-Screenshot.png)
 
