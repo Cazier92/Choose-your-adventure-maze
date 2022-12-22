@@ -28,4 +28,11 @@ Favicon was obtained from:
 Light Mode Background:
 
 Photo by [Raph Howald](https://unsplash.com/@raphhowald?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/GSCtoEEqntQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+Background Music:
+
+From [szegvari](https://freesound.org/people/szegvari/) on [freesound](https://freesound.org/people/szegvari/sounds/580374/)
   
+Portal Music:
+
+From [MATRIXXX_](https://freesound.org/people/MATRIXXX_/) on [freesound](https://freesound.org/people/MATRIXXX_/sounds/657541/)

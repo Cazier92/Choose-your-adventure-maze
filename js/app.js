@@ -1,5 +1,6 @@
 import { startPage } from "../data/storyline.js"
 import { nextPage } from "../data/storyline.js"
+import * as gameAudio from '../js/audio.js'
 
 
 // * Constants:
@@ -39,6 +40,7 @@ containerBlock.addEventListener('click', restartGame)
 function init() {
     generateContent()
     render()
+    startBackgroundMusic()
 }
 
 init()
@@ -84,6 +86,14 @@ function appendOptions() {
 
 function updateMessage() {
     messageEl.textContent = page[page.length -1].message
+}
+
+function startBackgroundMusic() {
+    if (page[page.length -1].page === 0) {
+        const exploreContainer = document.getElementById('container-one')
+        // console.log(exploreContainer)
+        exploreContainer.addEventListener('click', gameAudio.playBackgroundMusic)
+    }
 }
 
 
