@@ -16,12 +16,11 @@ html, body {
 }
 
 main {
-    background-color: #3F4B3B;
+    background-color: rgba(67, 80, 63, .95);
     margin: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #3F4B3B;
     width: 75%;
     height: 100%;
 }
