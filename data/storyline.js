@@ -16,6 +16,7 @@ const storyline = [
         next: [20, 6],
         img: []
     },
+    //*idx1 is 20
     {
         page: 2,
         message: 'You were surrounded by thieves and killed!',

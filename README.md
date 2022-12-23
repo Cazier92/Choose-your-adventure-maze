@@ -17,7 +17,8 @@ Game will load in browser, no need to download anything!
 ## Future Enhancements:
 I've left this game open to the possibility of expansion, with the addition of extra mini-games and challenges, a travel journal/map, and health bars as I progress along my own journey. Check back often to see what new adventure awaits!
 
-
+## Planning Materials:
+My thoughts as I was planning this game can be found [here.](https://docs.google.com/document/d/1p7VmkYgwXGtXGA-RRMRZaGgOxLO5V7W77Y6wOlWPIkE/edit)
 
 ## Credits & Attributions:
 

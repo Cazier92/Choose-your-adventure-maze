@@ -48,6 +48,7 @@ init()
 function generateContent() {
     const currentPage = startPage()
     page.push(currentPage)
+    startPortalAudio()
 }
 
 function render() {
@@ -91,11 +92,18 @@ function updateMessage() {
 function startBackgroundMusic() {
     if (page[page.length -1].page === 0) {
         const exploreContainer = document.getElementById('container-one')
-        // console.log(exploreContainer)
         exploreContainer.addEventListener('click', gameAudio.playBackgroundMusic)
     }
 }
 
+
+function startPortalAudio() {
+    if (page[page.length -1].page === 16 || page[page.length -1].page === 24) {
+        const portalContainer = document.getElementById('container-one')
+        console.log(portalContainer)
+        portalContainer.addEventListener('click', gameAudio.playPortalAudio)
+    }
+}
 
 function handleClick(evt) {
     if (evt.target.id === 'container-one' || evt.target.id === 'option-one') {
@@ -105,6 +113,7 @@ function handleClick(evt) {
         page.push(nextPage(page[page.length -1].next[1]))
     }
     render()
+    startPortalAudio()
 }
 
 function restartGame(evt) {
@@ -119,7 +128,6 @@ function restartGame(evt) {
 
 function climb() {
     clickCount ++
-    console.log(clickCount)
 }
 
 function cliff() {
@@ -271,7 +279,7 @@ function fight() {
     fightContainer.id = 'fight-container'
     fightContainer.innerHTML = 
         `<h2>Hurry! Click on your sword to fight for your life!</h2>
-        <div id='countdown'>7</div>
+        <div id='countdown'>5</div>
         <div class='sword-div'>
         <img src="../assets/images/sword-sticker.png" alt="image of a sword" id= 'sword-img'>
         <div>`
@@ -280,14 +288,13 @@ function fight() {
     sword.style.maxWidth = '100px'
     clickCount = 0
     sword.addEventListener('click', climb)
-    // console.log(clickCount)
     fightOutcome()
 }
 
 function fightOutcome() {
     let countdownEl = document.getElementById('countdown')
     countdownEl.style.color = '#F71735'
-    timeLeft = 6
+    timeLeft = 4
     let timer = setInterval(function() {
         countdownEl.textContent = timeLeft ;
         countdownEl.animate(timerAnimation, timerAnimTiming)
