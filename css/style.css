@@ -16,30 +16,32 @@ html, body {
 }
 
 main {
-    background-color: rgba(67, 80, 63, .95);
-    margin: 0px;
+    background-color: rgba(67, 80, 63, .9);
+    /* margin: 0, 5vmin; */
+    /* border: 5px solid black; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 75%;
+    width: 70%;
     height: 100%;
 }
 
 h1 {
     color:antiquewhite;
     font-family: 'Fredericka the Great', cursive;
-    font-size: 60px;
+    font-size: 6vmin;
 }
 
 h2 {
     margin: 20px;
     font-family: 'Fredericka the Great', cursive;
+    font-size: 3vmin;
 }
 
 #message {
     margin: 50px 150px;
     color: antiquewhite;
-    font-size: 26px;
+    font-size: 3vmin;
     text-align: center;
     font-family: 'Fredericka the Great', cursive;
 }
@@ -51,8 +53,8 @@ h2 {
 }
 
 .container {
-    width: 400px;
-    height: 400px;
+    width: 40vmin;
+    height: 40vmin;
     background-color: #B6C197;
     text-align: center;
     border-radius: 10px;
@@ -74,8 +76,8 @@ h2 {
 }
 
 #container-one {
-    background: rgb(182,193,151);
-    background: linear-gradient(90deg, rgba(182,193,151,1) 0%, rgba(213,221,188,1) 25%, rgba(250,235,215,1) 100%);
+    /* background: rgb(182,193,151); */
+    background: linear-gradient(90deg, rgba(182,193,151,.9) 0%, rgba(213,221,188,.8) 25%, rgba(250,235,215,.7) 100%);
     box-shadow:-10px 10px 15px 4px rgba(0, 0, 0, .8);
 }
 
@@ -86,7 +88,7 @@ h2 {
 
 #container-two {
     background: rgb(182,193,151);
-    background: linear-gradient(270deg, rgba(182,193,151,1) 0%, rgba(213,221,188,1) 25%, rgba(250,235,215,1) 100%);
+    background: linear-gradient(270deg, rgba(182,193,151,.9) 0%, rgba(213,221,188,.8) 25%, rgba(250,235,215,.7) 100%);
     box-shadow:10px 10px 15px 4px rgba(0, 0, 0, .8);
 }
 
@@ -103,7 +105,7 @@ h2 {
 }
 
 .option-text {
-    font-size: 20px;
+    font-size: 2vmin;
     color: black;
     padding: 20px;
     font-family: 'Oxanium', cursive;
