@@ -243,14 +243,14 @@ const storyline = [
     },
     {
         page: 30,
-        message: "",
+        message: "Help",
         optOne: "",
         optTwo: "",
         next: [ ]
     },
     {
         page: 31,
-        message: "",
+        message: "Run away",
         optOne: "",
         optTwo: "",
         next: [ ]
