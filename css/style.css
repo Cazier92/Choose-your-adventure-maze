@@ -24,6 +24,9 @@ main {
     align-items: center;
     width: 70%;
     height: 100%;
+    /* border-left: 5px solid rgba(0,0,0,.5); */
+    /* border-right: 5px solid black; */
+    box-shadow: 0 0 5px 1vmin rgba(67, 80, 63, .9);
 }
 
 h1 {
@@ -171,6 +174,13 @@ img {
 
     #dead-container {
         height: 100px;
+    }
+
+    #container-one:hover {
+        animation: none;
+    }
+    #container-two:hover {
+        animation: none;
     }
 
 }
