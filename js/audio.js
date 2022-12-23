@@ -17,7 +17,7 @@ function playPortalAudio() {
 function playDeadSound() {
     backgroundMusic.pause()
     backgroundMusic.currentTime = 0
-    deadSound.volume = 0.5
+    deadSound.volume = 1
     deadSound.play()
 }
 

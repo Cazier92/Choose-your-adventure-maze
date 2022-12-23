@@ -16,6 +16,7 @@ const storyline = [
         next: [20, 6],
         img: []
     },
+//*! When using storyline[1].next to test, remember to change .next back to [20, 6]!!!
     {
         page: 2,
         message: 'You were surrounded by thieves and killed!',

@@ -101,7 +101,9 @@ function handleClick(evt) {
     }
     updateRecentPage()
     render()
+    console.log(recentPage)
     startPortalAudio()
+    startDeadAudio()
 }
 
 //* Function to edit most recent page:
@@ -124,12 +126,15 @@ function startBackgroundMusic() {
 function startPortalAudio() {
     if (recentPage === 16 || recentPage === 24) {
         const portalContainer = document.getElementById('container-one')
-        console.log(portalContainer)
         portalContainer.addEventListener('click', gameAudio.playPortalAudio)
     }
 }
 
-
+function startDeadAudio() {
+    if (recentPage === 2 || recentPage === 5 || recentPage === 8 || recentPage === 15 || recentPage === 27) {
+        gameAudio.playDeadSound()
+    }
+}
 
 
 //* Functions to create standard containers:
@@ -353,14 +358,10 @@ function fightOutcome() {
         if (timeLeft === -1) {
             clearInterval(timer)
             if (clickCount >= 15) {
-                console.log(page[page.length-1])
                 page.push(nextPage(page[page.length -1].next[1]))
-                console.log(page[page.length-1])
             }
             if (clickCount < 15) {
-                console.log(page[page.length-1])
                 page.push(nextPage(page[page.length -1].next[0]))
-                console.log(page[page.length-1])
             }
             render()
             let containerToRemove = document.getElementById('fight-container')
