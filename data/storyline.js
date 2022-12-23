@@ -16,7 +16,7 @@ const storyline = [
         next: [20, 6],
         img: []
     },
-//*! When using storyline[1].next to test, remember to change .next back to [20, 6]!!!
+//*! When using storyline[1].next to test if other pages are working, remember to change .next back to [20, 6]!!!
     {
         page: 2,
         message: 'You were surrounded by thieves and killed!',
@@ -227,10 +227,10 @@ const storyline = [
     },
     {
         page: 28,
-        message: "You did it!",
-        optOne: "",
-        optTwo: "",
-        next: [ ],
+        message: "Surviving yet another near-death experience, you find yourself in the distant path, in front of a princess! She claims to have been waiting for you for a long time, and begs your help defeating the demon that awaits below.",
+        optOne: "Help this ancient kingdom in need?",
+        optTwo: "Run away? You've been at this all day and have almost died more than once already!",
+        next: [30, 31],
         img: []
     },
     {
@@ -246,8 +246,21 @@ const storyline = [
         message: "",
         optOne: "",
         optTwo: "",
-        next: [ ],
-        img: []
+        next: [ ]
+    },
+    {
+        page: 31,
+        message: "",
+        optOne: "",
+        optTwo: "",
+        next: [ ]
+    },
+    {
+        page: 32,
+        message: "",
+        optOne: "",
+        optTwo: "",
+        next: [ ]
     },
         
 ]
