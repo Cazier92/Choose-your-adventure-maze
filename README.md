@@ -41,3 +41,7 @@ From [MATRIXXX_](https://freesound.org/people/MATRIXXX_/) on [freesound](https:/
 Dead Sound:
 
 From [gunnbladez](https://freesound.org/people/gunnbladez/) on [freesound](https://freesound.org/people/gunnbladez/sounds/662620/)
+
+Technologies Used Buttons:
+
+From [shields.io](https://shields.io/)
