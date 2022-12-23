@@ -1,6 +1,6 @@
-let backgroundMusic = new Audio('../assets/audio/szegvari__dark-castle-atmosphere.wav')
-let portalAudio = new Audio('../assets/audio/matrixxx__crystal-magic.wav')
-let deadSound = new Audio('../assets/audio/gunnbladez__147-octane-dead-rising-piano-01.wav')
+let backgroundMusic = new Audio('../assets/audio/580374__szegvari__dark-castle-atmosphere.mp3')
+let portalAudio = new Audio('../assets/audio/657541__matrixxx__crystal-magic.mp3')
+let deadSound = new Audio('../assets/audio/662620__gunnbladez__147-octane-dead-rising-piano-01.mp3')
 
 function playBackgroundMusic() {
     backgroundMusic.volume = 0.125
