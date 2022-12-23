@@ -18,6 +18,7 @@ Game will load in browser, no need to download anything!
 I've left this game open to the possibility of expansion, with the addition of extra mini-games and challenges, a travel journal/map, and health bars as I progress along my own journey. Check back often to see what new adventure awaits!
 
 ## Ice Box:
+- [ ] Add audio when selecting an option
 - [ ] Style buttons, replace climb and row buttons with icons
 - [ ] Add a hamburger menu that includes a light/dark mode toggle
 - [ ] Add sepparate storylines for different portals and expand them
