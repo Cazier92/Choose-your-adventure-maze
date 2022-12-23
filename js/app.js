@@ -179,6 +179,7 @@ function restartGame(evt) {
     }
 }
 
+
 function climb() {
     clickCount ++
 }
