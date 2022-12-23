@@ -238,13 +238,7 @@ const storyline = [
         
 ]
 
-// {
-//     page: 11,
-//     message: "",
-//     optOne: "",
-//     optTwo: "",
-//     next: [ ]
-// },
+
 
 // * option values other than str: null=dead, 0=gaveUp, 1=cliff, 2=boat, 3=portal, 4=fight
 // * page 3 is initial gave up page
