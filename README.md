@@ -37,3 +37,7 @@ From [szegvari](https://freesound.org/people/szegvari/) on [freesound](https://f
 Portal Music:
 
 From [MATRIXXX_](https://freesound.org/people/MATRIXXX_/) on [freesound](https://freesound.org/people/MATRIXXX_/sounds/657541/)
+
+Dead Sound:
+
+From [gunnbladez](https://freesound.org/people/gunnbladez/) on [freesound](https://freesound.org/people/gunnbladez/sounds/662620/)

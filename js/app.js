@@ -19,6 +19,7 @@ const timerAnimTiming = {
 let page = []
 let clickCount = 0
 let timeLeft 
+let recentPage 
 
 
 
@@ -36,6 +37,8 @@ containerBlock.addEventListener('click', handleClick)
 containerBlock.addEventListener('click', restartGame)
 
 // * Functions:
+
+//* Game logic functions:
 
 function init() {
     generateContent()
@@ -89,6 +92,27 @@ function updateMessage() {
     messageEl.textContent = page[page.length -1].message
 }
 
+function handleClick(evt) {
+    if (evt.target.id === 'container-one' || evt.target.id === 'option-one') {
+        page.push(nextPage(page[page.length -1].next[0]))
+    } 
+    if (evt.target.id === 'container-two' || evt. target.id === 'option-two') {
+        page.push(nextPage(page[page.length -1].next[1]))
+    }
+    updateRecentPage()
+    render()
+    startPortalAudio()
+}
+
+//* Function to edit most recent page:
+
+function updateRecentPage() {
+    recentPage = page[page.length -1].page
+}
+
+
+//* Functions to handle audio:
+
 function startBackgroundMusic() {
     if (page[page.length -1].page === 0) {
         const exploreContainer = document.getElementById('container-one')
@@ -98,23 +122,47 @@ function startBackgroundMusic() {
 
 
 function startPortalAudio() {
-    if (page[page.length -1].page === 16 || page[page.length -1].page === 24) {
+    if (recentPage === 16 || recentPage === 24) {
         const portalContainer = document.getElementById('container-one')
         console.log(portalContainer)
         portalContainer.addEventListener('click', gameAudio.playPortalAudio)
     }
 }
 
-function handleClick(evt) {
-    if (evt.target.id === 'container-one' || evt.target.id === 'option-one') {
-        page.push(nextPage(page[page.length -1].next[0]))
-    } 
-    if (evt.target.id === 'container-two' || evt. target.id === 'option-two') {
-        page.push(nextPage(page[page.length -1].next[1]))
-    }
-    render()
-    startPortalAudio()
+
+
+
+//* Functions to create standard containers:
+
+
+function optOneContent() {
+    let containerOne = document.createElement('div')
+    containerOne.className = 'container' 
+    containerOne.id = 'container-one'
+    containerOne.innerHTML = 
+        `
+        <h2>Do You:</h2>
+        <p id="option-one" class="option-text">${page[page.length -1].optOne}</p>
+        `
+    containerBlock.appendChild(containerOne)
 }
+
+function optTwoContent() {
+    let containerTwo = document.createElement('div')
+        containerTwo.className = 'container'
+        containerTwo.id = 'container-two'
+        containerTwo.innerHTML = 
+            `
+            <h2>Or Do You:</h2>
+            <p id="option-two" class="option-text">${page[page.length -1].optTwo}</p>
+            `
+        containerBlock.appendChild(containerTwo)
+}
+
+
+
+//* Functions to create and handle special containers:
+
 
 function restartGame(evt) {
     if (evt.target.id === 'yes-button') {
@@ -321,18 +369,7 @@ function fightOutcome() {
     }, 1000)
 }
 
-function optOneContent() {
-    let containerOne = document.createElement('div')
-    containerOne.className = 'container' 
-    containerOne.id = 'container-one'
-    containerOne.innerHTML = 
-        `
-        <h2>Do You:</h2>
-        <p id="option-one" class="option-text">${page[page.length -1].optOne}</p>
-        `
-    containerBlock.appendChild(containerOne)
-}
-        // <img src="${page[page.length -1].img[0]}" alt="">
+
 
 function dead() {
     let deadContainer = document.createElement('div')
@@ -360,16 +397,5 @@ function giveUp() {
         containerBlock.appendChild(giveUpContainer)
 }
 
-function optTwoContent() {
-    let containerTwo = document.createElement('div')
-        containerTwo.className = 'container'
-        containerTwo.id = 'container-two'
-        containerTwo.innerHTML = 
-            `
-            <h2>Or Do You:</h2>
-            <p id="option-two" class="option-text">${page[page.length -1].optTwo}</p>
-            `
-        containerBlock.appendChild(containerTwo)
-}
 
-                // <img src="${page[page.length -1].img[1]}" alt="">
+
