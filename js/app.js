@@ -28,25 +28,31 @@ let recentPage
 const messageEl = document.getElementById('message')
 const containerBlock = document.getElementById('container-block')
 const mainEl = document.querySelector('main')
-
+const startBtn = document.getElementById('start-button')
+const startBtnDiv = document.getElementById('start-btn-div')
 
 
 // * Event Listeners:
 
 containerBlock.addEventListener('click', handleClick)
 containerBlock.addEventListener('click', restartGame)
+startBtn.addEventListener('click', init)
+
 
 // * Functions:
 
 //* Game logic functions:
 
 function init() {
+    mainEl.removeChild(startBtnDiv)
     generateContent()
     render()
-    startBackgroundMusic()
+    // startBackgroundMusic()
+    gameAudio.playBackgroundMusic()
 }
 
-init()
+
+// init()
 
 function generateContent() {
     const currentPage = startPage()
@@ -115,12 +121,12 @@ function updateRecentPage() {
 
 //* Functions to handle audio:
 
-function startBackgroundMusic() {
-    if (page[page.length -1].page === 0) {
-        const exploreContainer = document.getElementById('container-one')
-        exploreContainer.addEventListener('click', gameAudio.playBackgroundMusic)
-    }
-}
+// function startBackgroundMusic() {
+//     if (page[page.length -1].page === 0) {
+//         const exploreContainer = document.getElementById('container-one')
+//         exploreContainer.addEventListener('click', gameAudio.playBackgroundMusic)
+//     }
+// }
 
 
 function startPortalAudio() {

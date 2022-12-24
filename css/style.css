@@ -41,6 +41,14 @@ h2 {
     font-size: 3vmin;
 }
 
+#start-btn-div {
+    margin-top: 10vmin;
+    display: flex;
+    gap: 5vmin;
+}
+
+
+
 #message {
     margin: 50px 150px;
     color: antiquewhite;
