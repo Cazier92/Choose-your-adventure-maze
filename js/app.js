@@ -66,11 +66,18 @@ function displayInst() {
     }
 }
 
+function removeInst() {
+    if (instDisplayed) {
+        mainEl.removeChild(instructions)
+        instDisplayed = false
+    }
+}
+
 //* Game logic functions:
 
 function init() {
     mainEl.removeChild(startBtnDiv)
-    mainEl.removeChild(instructions)
+    removeInst()
     generateContent()
     render()
     // startBackgroundMusic()
