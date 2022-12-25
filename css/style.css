@@ -47,7 +47,34 @@ h2 {
     gap: 5vmin;
 }
 
+.start-screen-button {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 2vmin;
+    padding: 1vmin;
+    border-radius: 10px;
+    border: none;
+    background-color: antiquewhite;
+    color: #30392D;
+    
+}
 
+#instructions-container {
+    margin-top: 5vmin;
+    width: 80vmin;
+    padding-left: 2vmin;
+    padding-right: 2vmin;
+}
+
+#instructions-container>h3 {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 3vmin;
+    color: #30392D;
+}
+
+#instructions-container>p {
+    font-family: 'Oxanium', cursive;
+    font-size: 2vmin;
+}
 
 #message {
     margin: 50px 150px;

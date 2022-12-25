@@ -1,5 +1,6 @@
 import { startPage } from "../data/storyline.js"
 import { nextPage } from "../data/storyline.js"
+import { instText } from "../data/storyline.js"
 import * as gameAudio from '../js/audio.js'
 
 
@@ -20,7 +21,8 @@ let page = []
 let clickCount = 0
 let timeLeft 
 let recentPage 
-
+let instDisplayed = false
+let instructions
 
 
 // * Chached Element References:
@@ -29,6 +31,7 @@ const messageEl = document.getElementById('message')
 const containerBlock = document.getElementById('container-block')
 const mainEl = document.querySelector('main')
 const startBtn = document.getElementById('start-button')
+const instBtn = document.getElementById('instruction-button')
 const startBtnDiv = document.getElementById('start-btn-div')
 
 
@@ -37,14 +40,37 @@ const startBtnDiv = document.getElementById('start-btn-div')
 containerBlock.addEventListener('click', handleClick)
 containerBlock.addEventListener('click', restartGame)
 startBtn.addEventListener('click', init)
+instBtn.addEventListener('click', displayInst)
 
 
 // * Functions:
+
+//* Functions to handle instructions:
+
+function displayInst() {
+    if (instDisplayed === false) {
+        instructions = document.createElement('div')
+        instructions.className = 'special-container'
+        instructions.id = 'instructions-container'
+        instructions.innerHTML =
+        `
+        <h3>Hello Adventurer!</h3>
+        <p>${instText}</p>
+        `
+        mainEl.appendChild(instructions)
+        instDisplayed = true
+    }
+    else {
+        mainEl.removeChild(instructions)
+        instDisplayed = false
+    }
+}
 
 //* Game logic functions:
 
 function init() {
     mainEl.removeChild(startBtnDiv)
+    mainEl.removeChild(instructions)
     generateContent()
     render()
     // startBackgroundMusic()
