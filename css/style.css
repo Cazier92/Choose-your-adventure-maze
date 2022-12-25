@@ -76,6 +76,7 @@ h2 {
     font-size: 2vmin;
 }
 
+
 #message {
     margin: 50px 150px;
     color: antiquewhite;
@@ -111,6 +112,24 @@ h2 {
     animation-duration: 1s;
     touch-action: manipulation;
     box-shadow:0 10px 15px 4px rgba(0, 0, 0, .8);
+}
+
+#game-over-container {
+    background: none;
+    box-shadow: none;
+    width: 80vmin;
+}
+
+#game-over-container>h1 {
+    color: red;
+    font-size: 10vmin;
+}
+
+#game-over-container>a {
+    color: antiquewhite;
+    text-decoration: none;
+    font-family: 'Oxanium', cursive;
+    font-size: 2vmin;
 }
 
 #container-one {
