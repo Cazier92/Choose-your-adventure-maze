@@ -23,6 +23,7 @@ let timeLeft
 let recentPage 
 let instDisplayed = false
 let instructions
+let onStartPage = true
 
 
 // * Chached Element References:
@@ -45,7 +46,7 @@ instBtn.addEventListener('click', displayInst)
 
 // * Functions:
 
-//* Functions to handle instructions:
+//* Functions to start page:
 
 function displayInst() {
     if (instDisplayed === false) {
@@ -73,10 +74,17 @@ function removeInst() {
     }
 }
 
+function removeStartPageBtns() {
+    if (onStartPage) {
+        mainEl.removeChild(startBtnDiv)
+        onStartPage = false
+    }
+}
+
 //* Game logic functions:
 
 function init() {
-    mainEl.removeChild(startBtnDiv)
+    removeStartPageBtns()
     removeInst()
     generateContent()
     render()

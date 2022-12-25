@@ -52,6 +52,10 @@ Dead Sound:
 
 From [gunnbladez](https://freesound.org/people/gunnbladez/) on [freesound](https://freesound.org/people/gunnbladez/sounds/662620/)
 
+Game Over Music: 
+From [migfus20](https://freesound.org/people/Migfus20/) on [freesound](https://freesound.org/people/Migfus20/sounds/559834/)
+
 Technologies Used Buttons:
 
 From [shields.io](https://shields.io/)
+
