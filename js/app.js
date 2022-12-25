@@ -148,9 +148,9 @@ function handleClick(evt) {
     }
     updateRecentPage()
     render()
-    console.log(recentPage)
     startPortalAudio()
     startDeadAudio()
+    startGameOverMusic()
 }
 
 //* Function to edit most recent page:
@@ -180,6 +180,12 @@ function startPortalAudio() {
 function startDeadAudio() {
     if (recentPage === 2 || recentPage === 5 || recentPage === 8 || recentPage === 15 || recentPage === 27) {
         gameAudio.playDeadSound()
+    }
+}
+
+function startGameOverMusic() {
+    if (recentPage === 3) {
+        gameAudio.playGameOver()
     }
 }
 
