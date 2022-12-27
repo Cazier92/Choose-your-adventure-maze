@@ -114,6 +114,9 @@ function appendOptions() {
     if (page[page.length -1].optOne === null) {
         dead()
     }
+    if (page[page.length -1].optOne === undefined) {
+        gameOver()
+    }
     if (page[page.length -1].optOne === 0) {
         giveUp()
     }
@@ -227,17 +230,18 @@ function restartGame(evt) {
         init()
     }
     if (evt.target.id === 'no-button') {
-        containerBlock.innerHTML = ''
-        messageEl.textContent = "You'll never know the adventures you missed out on!"
-        let gameOverContainer = document.createElement('div')
-        gameOverContainer.className = 'special-container'
-        gameOverContainer.id = 'game-over-container'
-        gameOverContainer.innerHTML =
-        `
-        <h1>Game Over</h1>
-        <a href="https://bryce-cazier-maze.netlify.app/">Return to Main Menu</a>
-        `
-        mainEl.appendChild(gameOverContainer)
+        // containerBlock.innerHTML = ''
+        // messageEl.textContent = "You'll never know the adventures you missed out on!"
+        // let gameOverContainer = document.createElement('div')
+        // gameOverContainer.className = 'special-container'
+        // gameOverContainer.id = 'game-over-container'
+        // gameOverContainer.innerHTML =
+        // `
+        // <h1>Game Over</h1>
+        // <a href="https://bryce-cazier-maze.netlify.app/">Return to Main Menu</a>
+        // `
+        // mainEl.appendChild(gameOverContainer)
+        gameOver()
     }
 }
 
@@ -461,5 +465,17 @@ function giveUp() {
         containerBlock.appendChild(giveUpContainer)
 }
 
-
+function gameOver() {
+    // containerBlock.innerHTML = ''
+    gameAudio.playGameOver()
+    let gameOverContainer = document.createElement('div')
+    gameOverContainer.className = 'special-container'
+    gameOverContainer.id = 'game-over-container'
+    gameOverContainer.innerHTML =
+    `
+    <h1>Game Over</h1>
+    <a href="https://bryce-cazier-maze.netlify.app/">Return to Main Menu</a>
+    `
+    mainEl.appendChild(gameOverContainer)
+}
 
