@@ -19,10 +19,10 @@ I've left this game open to the possibility of expansion, with the addition of e
 
 ## Ice Box:
 - [ ] Add a travel companion
-- [ ] Add audio when selecting an option
+- [X] Add audio when selecting an option
 - [ ] Style buttons, replace climb and row buttons with icons
 - [ ] Add a hamburger menu that includes a light/dark mode toggle
-- [ ] Add sepparate storylines for different portals and expand them
+- [ ] Add separate storylines for different portals and expand them
 - [ ] Add an item bag and introduce the capability to pick up items along the journey
 - [ ] Add a health bar
 - [ ] Add a map that has the route the player has taken pushed to it
@@ -35,6 +35,16 @@ My thoughts as I was planning this game can be found [here.](https://docs.google
 Favicon was obtained from:
 
 [Maze icons created by Good Ware - Flaticon](https://www.flaticon.com/free-icons/maze)
+
+Satchel Icon:
+From [flaticon](https://flaticon.com), [Satchel icons created by juicy_fish]("https://www.flaticon.com/free-icons/satchel") 
+
+Sword Icon:
+From [flaticon](https://flaticon.com), [Barbarian icons created by Evan Gerard K]("https://www.flaticon.com/free-icons/barbarian")
+
+Coin Icon:
+From [flaticon](https://flaticon.com), [Coin icons created by Freepik]("https://www.flaticon.com/free-icons/coin")
+
 
 Light Mode Background:
 

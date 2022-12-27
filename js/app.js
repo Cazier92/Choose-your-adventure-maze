@@ -476,7 +476,7 @@ function gameOver() {
     gameOverContainer.innerHTML =
     `
     <h1>Game Over</h1>
-    <a href="https://bryce-cazier-maze.netlify.app/">Return to Main Menu</a>
+    <a href="../index.html">Return to Main Menu</a>
     `
     mainEl.appendChild(gameOverContainer)
 }
