@@ -144,9 +144,11 @@ function updateMessage() {
 
 function handleClick(evt) {
     if (evt.target.id === 'container-one' || evt.target.id === 'option-one') {
+        gameAudio.playOptOneAudio()
         page.push(nextPage(page[page.length -1].next[0]))
     } 
     if (evt.target.id === 'container-two' || evt. target.id === 'option-two') {
+        gameAudio.playOptTwoAudio()
         page.push(nextPage(page[page.length -1].next[1]))
     }
     updateRecentPage()

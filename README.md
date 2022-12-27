@@ -55,6 +55,12 @@ From [gunnbladez](https://freesound.org/people/gunnbladez/) on [freesound](https
 Game Over Music: 
 From [migfus20](https://freesound.org/people/Migfus20/) on [freesound](https://freesound.org/people/Migfus20/sounds/559834/)
 
+Option One Game Sound (clicking on left-hand option):
+From [F.M.Audio](https://freesound.org/people/F.M.Audio/) on [freesound](https://freesound.org/people/F.M.Audio/sounds/570525/)
+
+Option One Game Sound (clicking on left-hand option):
+From [F.M.Audio](https://freesound.org/people/F.M.Audio/) on [freesound](https://freesound.org/people/F.M.Audio/sounds/570533/)
+
 Technologies Used Buttons:
 
 From [shields.io](https://shields.io/)

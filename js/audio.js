@@ -2,6 +2,8 @@ let backgroundMusic = new Audio('../assets/audio/580374__szegvari__dark-castle-a
 let portalAudio = new Audio('../assets/audio/657541__matrixxx__crystal-magic.mp3')
 let deadSound = new Audio('../assets/audio/662620__gunnbladez__147-octane-dead-rising-piano-01.mp3')
 let gameOverMusic = new Audio('../assets/audio/migfus20__sad-music.mp3')
+let optOneAudio = new Audio('../assets/audio/stone1.mp3')
+let optTwoAudio = new Audio('../assets/audio/stone2.mp3')
 
 
 function playBackgroundMusic() {
@@ -32,9 +34,20 @@ function playGameOver() {
     gameOverMusic.play()
 }
 
+function playOptOneAudio() {
+    // backgroundMusic.pause()
+    // optOneAudio.volume = 1
+    optOneAudio.play()
+}
+function playOptTwoAudio() {
+    optTwoAudio.play()
+}
+
 export {
     playBackgroundMusic,
     playPortalAudio,
     playDeadSound,
     playGameOver,
+    playOptOneAudio,
+    playOptTwoAudio,
 }
