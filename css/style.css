@@ -146,9 +146,11 @@ h2 {
 #instructions-container {
     margin-top: 5vmin;
     width: 80vmin;
+    height: 34vmin;
     padding-left: 2vmin;
     padding-right: 2vmin;
 }
+
 
 #instructions-container>h3 {
     font-family: 'Fredericka the Great', cursive;
@@ -159,6 +161,38 @@ h2 {
 #instructions-container>p {
     font-family: 'Oxanium', cursive;
     font-size: 2vmin;
+}
+
+#warning-container {
+    margin-top: 5vmin;
+    width: 80vmin;
+    height: 34vmin;
+    padding-left: 2vmin;
+    padding-right: 2vmin;
+    display: flex;
+    flex-direction: column;
+}
+
+#warning-container>h3 {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 3vmin;
+    color: #30392D;
+}
+
+#warning-container>p {
+    font-family: 'Oxanium', cursive;
+    font-size: 2vmin;
+}
+
+.warning-button {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 2vmin;
+    padding: 1vmin;
+    border-radius: 10px;
+    border: none;
+    background-color: #30392D;
+    color: antiquewhite;
+    width: 15%;
 }
 
 

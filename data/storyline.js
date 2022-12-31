@@ -246,6 +246,8 @@ const storyline = [
 
 const instText = 'Maze Raider is a choose your own adventure styled game where you explore ancient ruins in search of treasure and adventure. At various points you may be faced with battling theives, wild animals, or risking your life on the edge of a cliff! At every step you will be given two choices, just click on whichever option sounds like the better adventure to you! Be warned though, as certain options will lead to paths where you need to click multiple times on a button or icon in order to escape danger!'
 
+const warnMsgText = 'Progress will not be saved! Would you like to return to the game, or continue to main menu?'
+
 function startPage() {
     return storyline[0]
 }
@@ -257,5 +259,6 @@ function nextPage(ref) {
 export {
     startPage,
     nextPage,
-    instText
+    instText,
+    warnMsgText,
 }

@@ -1,6 +1,7 @@
 import { startPage } from "../data/storyline.js"
 import { nextPage } from "../data/storyline.js"
 import { instText } from "../data/storyline.js"
+import { warnMsgText } from "../data/storyline.js"
 import * as gameAudio from '../js/audio.js'
 
 
@@ -122,10 +123,37 @@ function createMenu() {
         hamburger.classList.remove('active')
         navMenu.classList.remove('active')
     }))
-    
+    mainMenu()
 }
 
-createMenu()
+
+function mainMenu() {
+    const returnToMain = document.getElementById('main-menu')
+    returnToMain.addEventListener('click', warnMsg)
+}
+
+function warnMsg() {
+    containerBlock.innerHTML = ''
+    let warning = document.createElement('div')
+    warning.className = 'special-container'
+    warning.id = 'warning-container'
+    warning.innerHTML = 
+    `
+    <h3>Warning!</h3>
+    <p>${warnMsgText}</p>
+    <div id='warn-btn-div'>
+    <button class='warning-button' id='return-btn'>Return</button>
+    <a href='index.html'>
+    <button class='warning-button' id='continue-btn'>Continue</button>
+    </a>
+    </div>
+    `
+    containerBlock.appendChild(warning)
+    const continueBtn = document.getElementById('return-btn')
+    continueBtn.addEventListener('click', render)
+}
+
+
 
 //* Game logic functions:
 
@@ -136,6 +164,7 @@ function init() {
     render()
     // startBackgroundMusic()
     gameAudio.playBackgroundMusic()
+    createMenu()
 }
 
 
