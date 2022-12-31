@@ -29,6 +29,90 @@ main {
     box-shadow: 0 0 5px 1vmin rgba(67, 80, 63, .9);
 }
 
+header {
+    /* background-color: white; */
+    /* z-index: 1; */
+    /* display: flex;
+    flex-direction: column-reverse; */
+    align-self: flex-end;
+    /* align-items: flex-end; */
+    /* width: 70%; */
+    /* margin-right: 15%; */
+    /* background-color: rgba(67, 80, 63, .9); */
+
+}
+
+ul {
+    align-self: flex-end;
+    align-items: flex-end;
+
+}
+
+li {
+    list-style: none;
+    /* align-self: flex-end; */
+}
+
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-menu {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px; */
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+}
+
+
+.nav-item {
+    margin: 16px 0;
+    /* cursor: pointer; */
+    color: antiquewhite;
+
+}
+
+.nav-menu.active {
+    left: 30%;
+}
+
+.hamburger {
+    display: block;
+    cursor: pointer;
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: antiquewhite;
+}
+
 h1 {
     color:antiquewhite;
     font-family: 'Fredericka the Great', cursive;
