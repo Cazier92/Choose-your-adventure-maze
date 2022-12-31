@@ -34,6 +34,11 @@ function playGameOver() {
     gameOverMusic.play()
 }
 
+function stopDeadSound() {
+    deadSound.pause()
+    deadSound.currentTime = 0
+}
+
 function playOptOneAudio() {
     // backgroundMusic.pause()
     // optOneAudio.volume = 1
@@ -50,4 +55,5 @@ export {
     playGameOver,
     playOptOneAudio,
     playOptTwoAudio,
+    stopDeadSound,
 }

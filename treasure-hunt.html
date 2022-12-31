@@ -18,7 +18,8 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <script src="./js/app.js" type="module"></script>
+    <!-- <script src="./js/app.js" type="module"></script> -->
+    <script src="./js/treasure-hunt.js" type="module"></script>
     <title>Maze Raider</title>
 </head>
 <body>
@@ -28,6 +29,10 @@
         <div id="icons-div">
             <img class='icon' id="satchel-icon" src="./assets/images/satchel-icon.png" alt="">
             <img class='icon' id='coin-icon' src="./assets/images/gold-crown-coin-icon.png" alt="">
+        </div>
+        <div class="wall-integrity" id="integrity-div">
+            <p>Wall Integrity:</p>
+            <p id="integrity-bar"></p>
         </div>
         <div class='special-container' id="game-board">
             

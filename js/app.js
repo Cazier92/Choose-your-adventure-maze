@@ -229,6 +229,7 @@ function optTwoContent() {
 
 function restartGame(evt) {
     if (evt.target.id === 'yes-button') {
+        gameAudio.stopDeadSound()
         init()
     }
     if (evt.target.id === 'no-button') {
@@ -243,7 +244,9 @@ function restartGame(evt) {
         // <a href="https://bryce-cazier-maze.netlify.app/">Return to Main Menu</a>
         // `
         // mainEl.appendChild(gameOverContainer)
+        gameAudio.stopDeadSound()
         gameOver()
+        containerBlock.innerHTML = ''
     }
 }
 

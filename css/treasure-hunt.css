@@ -3,13 +3,26 @@
     width: 70%;
     height: 70%;
     animation: none;
+    display: grid;
+    grid-template-rows: repeat(5, 20%);
+    grid-template-columns: repeat(5, 20%);
+    /* cursor: url(../assets/images/satchel-icon.png), auto; */
 }
+
+.game-square {
+    cursor: url(../assets/images/satchel-icon.png), auto;
+}
+
+/* #game-board:hover {
+    cursor: url(../assets/images/man-icon.png);
+} */
 
 a {
     color: antiquewhite;
     text-decoration: none;
     font-family: 'Oxanium', cursive;
     font-size: 2vmin;
+    margin: 1vmin;
 }
 
 #icons-div {
@@ -22,3 +35,38 @@ a {
     max-width: 5vmin;
 }
 
+.wall-integrity {
+    font-family: 'Oxanium', cursive;
+    color: antiquewhite;
+    font-size: 2vmin;
+    margin: 1vmin 15vmin 1vmin 15vmin;
+    align-self: flex-start;
+    /* background-color: red; */
+    display: flex;
+    /* flex-direction: column; */
+    width: 70%;
+}
+
+.wall-integrity>p {
+    width: 20%;
+    margin-right: 1vmin;
+    /* align-self: flex-start; */
+}
+
+#integrity-bar {
+    background-color: red;
+    width: 60%;
+    margin-left: 1vmin;
+}
+
+#treasureSq {
+    /* background-image: url(../assets/images/gold-crown-coin-icon.png); */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#collapsing-p {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
