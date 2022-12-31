@@ -34,8 +34,8 @@ const mainEl = document.querySelector('main')
 const startBtn = document.getElementById('start-button')
 const instBtn = document.getElementById('instruction-button')
 const startBtnDiv = document.getElementById('start-btn-div')
-const hamburger = document.querySelector('.hamburger')
-const navMenu = document.querySelector('.nav-menu')
+// const hamburger = document.querySelector('.hamburger')
+// const navMenu = document.querySelector('.nav-menu')
 
 
 
@@ -45,14 +45,14 @@ containerBlock.addEventListener('click', handleClick)
 containerBlock.addEventListener('click', restartGame)
 startBtn.addEventListener('click', init)
 instBtn.addEventListener('click', displayInst)
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active')
-    navMenu.classList.toggle('active')
-})
-document.querySelectorAll('.nav-item').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active')
-    navMenu.classList.remove('active')
-}))
+// hamburger.addEventListener('click', () => {
+//     hamburger.classList.toggle('active')
+//     navMenu.classList.toggle('active')
+// })
+// document.querySelectorAll('.nav-item').forEach(n => n.addEventListener('click', () => {
+//     hamburger.classList.remove('active')
+//     navMenu.classList.remove('active')
+// }))
 
 
 // * Functions:
@@ -91,6 +91,41 @@ function removeStartPageBtns() {
         onStartPage = false
     }
 }
+
+//* Create Game Menu:
+
+function createMenu() {
+    let gameMenu = document.createElement('header')
+    gameMenu.innerHTML = 
+    `
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li class="nav-item">Gold</li>
+            <li class="nav-item">Treasure</li>
+            <li class="nav-item" id="main-menu">Return to Main Menu</li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+    `
+    mainEl.insertBefore(gameMenu, mainEl.firstChild)
+    const hamburger = document.querySelector('.hamburger')
+    const navMenu = document.querySelector('.nav-menu')
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active')
+        navMenu.classList.toggle('active')
+    })
+    document.querySelectorAll('.nav-item').forEach(n => n.addEventListener('click', () => {
+        hamburger.classList.remove('active')
+        navMenu.classList.remove('active')
+    }))
+    
+}
+
+createMenu()
 
 //* Game logic functions:
 

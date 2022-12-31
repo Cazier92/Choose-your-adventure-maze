@@ -66,12 +66,12 @@ li {
     align-items: center;
     gap: 60px; */
     position: fixed;
-    left: -100%;
+    left: 100%;
     top: 70px;
     gap: 0;
     flex-direction: column;
     width: 100%;
-    text-align: center;
+    text-align: right;
     transition: 0.3s;
 }
 
@@ -80,11 +80,12 @@ li {
     margin: 16px 0;
     /* cursor: pointer; */
     color: antiquewhite;
+    cursor: pointer;
 
 }
 
 .nav-menu.active {
-    left: 30%;
+    left: -18%;
 }
 
 .hamburger {
