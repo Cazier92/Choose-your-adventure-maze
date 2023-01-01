@@ -15,12 +15,14 @@ function whatKey(evt) {
 //*Variables:
 
 let integrityPercent = 60
-let timeLeft
+let timeLeftTreasureHunt
+let gold = 0
+let treasure = []
 
 //*Cached Element References:
+const mainEl = document.querySelector('main')
 const gameBoard = document.getElementById('game-board')
 const integrityBar = document.getElementById('integrity-bar')
-const mainEl = document.querySelector('main')
 const returnLink = document.querySelector('a')
 const integrityDiv = document.getElementById('integrity-div')
 
@@ -30,11 +32,11 @@ gameBoard.addEventListener('click', play)
 
 //*Functions:
 
-function init() {
+function treasureInit() {
     createGameBoard()
     createTreasure()
 }
-init()
+treasureInit()
 
 function createGameBoard() {
     for (let i=0; i<25; i++) {
@@ -77,10 +79,10 @@ function play(evt) {
 }
 
 function removeGameBoard() {
-        timeLeft = 2
+        timeLeftTreasureHunt = 2
         let timer = setInterval(function() {
-            timeLeft -= 1;
-            if (timeLeft === 0) {
+            timeLeftTreasureHunt -= 1;
+            if (timeLeftTreasureHunt === 0) {
                 // gameBoard.className = ''
                 returnLink.innerHTML = ''
                 gameBoard.id = 'game-over-container'
@@ -92,4 +94,18 @@ function removeGameBoard() {
                 clearInterval(timer)
             }
         }, 1000)
+}
+
+
+
+
+
+
+
+export {
+    treasureInit,
+    createGameBoard,
+    createTreasure,
+    play,
+    removeGameBoard,
 }

@@ -3,6 +3,7 @@ import { nextPage } from "../data/storyline.js"
 import { instText } from "../data/storyline.js"
 import { warnMsgText } from "../data/storyline.js"
 import * as gameAudio from '../js/audio.js'
+// import { treasureInit } from "./treasure-hunt.js"
 
 
 // * Constants:
@@ -25,6 +26,7 @@ let recentPage
 let instDisplayed = false
 let instructions
 let onStartPage = true
+let gold = 0
 
 
 // * Chached Element References:
@@ -101,8 +103,9 @@ function createMenu() {
     `
     <nav class="navbar">
         <ul class="nav-menu">
-            <li class="nav-item">Gold</li>
-            <li class="nav-item">Treasure</li>
+            <li class="nav-item" id='gold-menu'>Gold</li>
+            <li class="nav-item" id='satchel'>Satchel</li>
+            <li class="nav-item" id='treasure-hunt'>Dig For Treasure</li>
             <li class="nav-item" id="main-menu">Return to Main Menu</li>
         </ul>
         <div class="hamburger">
@@ -123,13 +126,19 @@ function createMenu() {
         hamburger.classList.remove('active')
         navMenu.classList.remove('active')
     }))
-    mainMenu()
+    menuOptions()
+    
 }
 
+createMenu()
 
-function mainMenu() {
+function menuOptions() {
     const returnToMain = document.getElementById('main-menu')
     returnToMain.addEventListener('click', warnMsg)
+    const goldMenu = document.getElementById('gold-menu')
+    goldMenu.addEventListener('click', displayGold)
+    const treasureHunt = document.getElementById('treasure-hunt')
+    treasureHunt.addEventListener('click', renderTreasureHunt)
 }
 
 function warnMsg() {
@@ -153,7 +162,110 @@ function warnMsg() {
     continueBtn.addEventListener('click', render)
 }
 
+function displayGold() {
+    containerBlock.innerHTML = ''
+    let goldContainer = document.createElement('div')
+    goldContainer.className = 'special-container'
+    goldContainer.id = 'gold-container'
+    goldContainer.innerHTML = 
+    `
+    <h3>Gold</h3>
+    <p>You currently have: ${gold} coins!</p>
+    <button class='close-button'>Close</button>
+    `
+    containerBlock.appendChild(goldContainer)
+    let closeBtn = document.querySelector('.close-button')
+    closeBtn.addEventListener('click', render)
+}
 
+function renderTreasureHunt() {
+    mainEl.innerHTML = 
+    `
+    <h1>Maze Raider</h1>
+    <!-- <h3 id="message"></h3> -->
+    <div id="instruction-button-div">
+        <button class='start-screen-button' id='treaure-instructions'>Instructions</button>
+    </div>
+    <div class="wall-integrity" id="integrity-div">
+        <p>Wall Integrity:</p>
+        <p id="integrity-bar"></p>
+    </div>
+    <div class='special-container' id="game-board">
+        
+    </div>
+    <a href="./index.html">Return to Main Menu</a>
+    `
+    const gameBoard = document.getElementById('game-board')
+    const integrityBar = document.getElementById('integrity-bar')
+    const returnLink = document.querySelector('a')
+    const integrityDiv = document.getElementById('integrity-div')
+    let integrityPercent = 60
+    let timeLeftTreasureHunt
+    gameBoard.addEventListener('click', play)
+    function treasureInit() {
+        createGameBoard()
+        createTreasure()
+    }
+    treasureInit()
+    
+    function createGameBoard() {
+        for (let i=0; i<25; i++) {
+            let gameSq = document.createElement('div')
+            gameSq.className = 'game-square'
+            gameSq.id = `sq${i}`
+            gameBoard.appendChild(gameSq)
+        }
+    }
+    
+    function createTreasure() {
+        let sqNum = Math.floor(Math.random()*25)
+        let treasureSq = document.getElementById(`sq${sqNum}`)
+        treasureSq.style.backgroundColor = 'red'
+        treasureSq.id = 'treasureSq'
+    }
+    
+    function play(evt) {
+        let treasure = document.getElementById('treasureSq')
+        if (evt.target.id !== 'treasureSq') {
+            integrityPercent -= 20
+            integrityBar.style.width = `${integrityPercent}%`
+            // return integrityPercent
+        }
+        if (integrityPercent === 0) {
+            integrityDiv.innerHTML =
+            `
+            <p id='collapsing-p'>The wall is collapsing!</p>
+            `
+            gameBoard.style.animation = 'hinge'
+            gameBoard.style.animationDuration = '2s'
+            removeGameBoard()
+            
+        }
+        if (evt.target.id === 'treasureSq') {
+            treasure.style.backgroundImage = 'url(../assets/images/gold-crown-coin-icon.png)'
+            // treasure.style.backgroundColor = ''
+        }
+        console.log(integrityPercent)
+    }
+    
+    function removeGameBoard() {
+            timeLeftTreasureHunt = 2
+            let timer = setInterval(function() {
+                timeLeftTreasureHunt -= 1;
+                if (timeLeftTreasureHunt === 0) {
+                    // gameBoard.className = ''
+                    returnLink.innerHTML = ''
+                    gameBoard.id = 'game-over-container'
+                    gameBoard.innerHTML = 
+                    `
+                    <h1>Game Over</h1>
+                    <a href="../index.html">Return to Main Menu</a>
+                    `
+                    clearInterval(timer)
+                }
+            }, 1000)
+    }
+}
 
 //* Game logic functions:
 
@@ -558,4 +670,10 @@ function gameOver() {
     `
     mainEl.appendChild(gameOverContainer)
 }
+
+
+
+
+
+
 

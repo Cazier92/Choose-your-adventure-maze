@@ -56,12 +56,13 @@ a {
 #integrity-bar {
     background-color: red;
     width: 60%;
+    height: 25%;
     margin-left: 1vmin;
 }
 
 #treasureSq {
     /* background-image: url(../assets/images/gold-crown-coin-icon.png); */
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
 }
 

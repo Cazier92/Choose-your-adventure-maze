@@ -195,6 +195,31 @@ h2 {
     width: 15%;
 }
 
+#gold-container {
+    height: 20vmin;
+}
+
+#gold-container>h3 {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 3vmin;
+    color: #30392D;
+}
+
+#gold-container>p {
+    font-family: 'Oxanium', cursive;
+    font-size: 2vmin;
+}
+
+.close-button {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 2vmin;
+    padding: 1vmin;
+    border-radius: 10px;
+    border: none;
+    background-color: #30392D;
+    color: antiquewhite;
+    width: 30%;
+}
 
 #message {
     margin: 50px 150px;
