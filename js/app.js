@@ -182,6 +182,7 @@ function displayGold() {
 }
 
 function renderTreasureHunt() {
+
     mainEl.innerHTML = 
     `
     <h1>Maze Raider</h1>
@@ -245,7 +246,7 @@ function renderTreasureHunt() {
             
         }
         if (evt.target.id === 'treasureSq') {
-
+            gameBoard.removeEventListener('click', play)
             treasureSq.innerHTML =
             `
             <img class='treasure-icons' src="../assets/images/gold-crown-coin-icon.png" alt="image of a gold coin">
@@ -283,7 +284,6 @@ function init() {
     render()
     // startBackgroundMusic()
     gameAudio.playBackgroundMusic()
-    createMenu()
 }
 
 
@@ -299,6 +299,7 @@ function render() {
     containerBlock.innerHTML = ''
     appendOptions()
     updateMessage()
+    createMenu()
 }
 
 function appendOptions() { 
