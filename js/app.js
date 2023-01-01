@@ -4,6 +4,8 @@ import { instText } from "../data/storyline.js"
 import { warnMsgText } from "../data/storyline.js"
 import * as gameAudio from '../js/audio.js'
 // import { treasureInit } from "./treasure-hunt.js"
+import { relics } from "../data/game-items.js"
+import { goldWinnings } from "../data/game-items.js"
 
 
 // * Constants:
@@ -27,6 +29,7 @@ let instDisplayed = false
 let instructions
 let onStartPage = true
 let gold = 0
+let treasureArr 
 
 
 // * Chached Element References:
@@ -182,9 +185,9 @@ function renderTreasureHunt() {
     mainEl.innerHTML = 
     `
     <h1>Maze Raider</h1>
-    <!-- <h3 id="message"></h3> -->
+    <h3 id="message"></h3> 
     <div id="instruction-button-div">
-        <button class='start-screen-button' id='treaure-instructions'>Instructions</button>
+        <button class='start-screen-button' id='treasure-instructions'>Instructions</button>
     </div>
     <div class="wall-integrity" id="integrity-div">
         <p>Wall Integrity:</p>
@@ -225,7 +228,7 @@ function renderTreasureHunt() {
     }
     
     function play(evt) {
-        let treasure = document.getElementById('treasureSq')
+        let treasureSq = document.getElementById('treasureSq')
         if (evt.target.id !== 'treasureSq') {
             integrityPercent -= 20
             integrityBar.style.width = `${integrityPercent}%`
@@ -242,8 +245,12 @@ function renderTreasureHunt() {
             
         }
         if (evt.target.id === 'treasureSq') {
-            treasure.style.backgroundImage = 'url(../assets/images/gold-crown-coin-icon.png)'
-            // treasure.style.backgroundColor = ''
+
+            treasureSq.innerHTML =
+            `
+            <img class='treasure-icons' src="../assets/images/gold-crown-coin-icon.png" alt="image of a gold coin">
+            `
+            // treasureSq.style.backgroundColor = ''
         }
         console.log(integrityPercent)
     }
@@ -675,5 +682,22 @@ function gameOver() {
 
 
 
+//* Functions for generating treasure winnings:
 
+function generateTreasure() {
+    let randomizeTreasures = Math.floor(Math.random() * 5)
+    console.log(randomizeTreasures, 'randomizeTreasures')
+    if (randomizeTreasures === 0) {
+        let treasureIdx = Math.floor(Math.random() * relics.length)
+        treasureArr = relics[treasureIdx]
+        console.log(treasureIdx, 'treasureIdx')
+    }
+    else {
+        let treasureIdx = Math.floor(Math.random() * goldWinnings.length)
+        treasureArr = goldWinnings[treasureIdx]
+        console.log(treasureIdx, 'treasureIdx')
+    }
 
+    console.log(treasureArr)
+}
+generateTreasure()

@@ -21,7 +21,8 @@ I've left this game open to the possibility of expansion, with the addition of e
 - [ ] Add a travel companion
 - [X] Add audio when selecting an option
 - [ ] Style buttons, replace climb and row buttons with icons
-- [ ] Add a hamburger menu that includes a light/dark mode toggle
+- [X] Add a hamburger menu 
+- [ ] Light/dark mode toggle
 - [ ] Add separate storylines for different portals and expand them
 - [ ] Add an item bag and introduce the capability to pick up items along the journey
 - [ ] Add a health bar
