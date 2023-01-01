@@ -1,7 +1,7 @@
 #game-board {
     /* background-color: white; */
-    width: 70%;
-    height: 70%;
+    width: 60vmin;
+    height: 60vmin;
     animation: none;
     display: grid;
     grid-template-rows: repeat(5, 20%);
@@ -74,4 +74,9 @@ a {
     width: 100%;
     justify-content: center;
     text-align: center;
+}
+
+#instruction-button-div {
+    display: flex;
+    gap: 5vmin;
 }

@@ -29,13 +29,14 @@ let instDisplayed = false
 let instructions
 let onStartPage = true
 let gold = 0
-let treasureArr 
+let treasureWon 
 
 
 // * Chached Element References:
 
 const messageEl = document.getElementById('message')
 const containerBlock = document.getElementById('container-block')
+// const miniGameBlock = document.getElementById('mini-game')
 const mainEl = document.querySelector('main')
 const startBtn = document.getElementById('start-button')
 const instBtn = document.getElementById('instruction-button')
@@ -133,7 +134,7 @@ function createMenu() {
     
 }
 
-createMenu()
+// createMenu()
 
 function menuOptions() {
     const returnToMain = document.getElementById('main-menu')
@@ -181,14 +182,56 @@ function displayGold() {
     closeBtn.addEventListener('click', render)
 }
 
-function renderTreasureHunt() {
+//* Functions for Treasure Hunt mini game:
 
-    mainEl.innerHTML = 
+//* Functions for generating treasure winnings:
+
+function generateTreasure() {
+    let randomizeTreasures = Math.floor(Math.random() * 5)
+    console.log(randomizeTreasures, 'randomizeTreasures')
+    if (randomizeTreasures === 0) {
+        let treasureIdx = Math.floor(Math.random() * relics.length)
+        treasureWon = relics[treasureIdx]
+        console.log(treasureIdx, 'treasureIdx')
+    }
+    else {
+        let treasureIdx = Math.floor(Math.random() * goldWinnings.length)
+        treasureWon = goldWinnings[treasureIdx]
+        console.log(treasureIdx, 'treasureIdx')
+    }
+
+    // console.log(treasureWon)
+}
+
+//*Functions to run treasure hunt:
+
+
+function renderTreasureHunt() {
+    containerBlock.innerHTML = ''
+    messageEl.textContent = ''
+    // mainEl.innerHTML = 
+    // `
+    // <h1>Maze Raider</h1>
+    // <h3 id="message"></h3> 
+    // <div id="instruction-button-div">
+    //     <button class='start-screen-button' id='treasure-instructions'>Instructions</button>
+    //     <button class='start-screen-button' id='game-return'>Return to Game</button>
+    // </div>
+    // <div class="wall-integrity" id="integrity-div">
+    //     <p>Wall Integrity:</p>
+    //     <p id="integrity-bar"></p>
+    // </div>
+    // <div class='special-container' id="game-board">
+        
+    // </div>
+    // <a href="./index.html">Return to Main Menu</a>
+    // `
+    let treasureHuntDiv = document.createElement('div')
+    treasureHuntDiv.innerHTML = 
     `
-    <h1>Maze Raider</h1>
-    <h3 id="message"></h3> 
     <div id="instruction-button-div">
         <button class='start-screen-button' id='treasure-instructions'>Instructions</button>
+        <button class='start-screen-button' id='game-return'>Return to Game</button>
     </div>
     <div class="wall-integrity" id="integrity-div">
         <p>Wall Integrity:</p>
@@ -199,18 +242,39 @@ function renderTreasureHunt() {
     </div>
     <a href="./index.html">Return to Main Menu</a>
     `
+    containerBlock.appendChild(treasureHuntDiv)
+    // const messageEl = document.getElementById('message')
     const gameBoard = document.getElementById('game-board')
     const integrityBar = document.getElementById('integrity-bar')
     const returnLink = document.querySelector('a')
     const integrityDiv = document.getElementById('integrity-div')
+    const gameReturnBtn = document.getElementById('game-return')
     let integrityPercent = 60
     let timeLeftTreasureHunt
     gameBoard.addEventListener('click', play)
+    gameReturnBtn.addEventListener('click', gameReturn)
     function treasureInit() {
         createGameBoard()
         createTreasure()
     }
     treasureInit()
+    
+    function gameReturn() {
+        // mainEl.innerHTML = 
+        // `
+        // <h1>Maze Raider</h1>
+        // <h3 id="message"></h3>
+        // <div id="container-block">
+        // </div>
+        // `
+        // const messageEl = document.getElementById('message')
+        // const containerBlock = document.getElementById('container-block')
+        // const mainEl = document.querySelector('main')
+        // createMenu()
+        // optOneContent()
+        // optTwoContent()
+        render()
+    }
     
     function createGameBoard() {
         for (let i=0; i<25; i++) {
@@ -246,14 +310,21 @@ function renderTreasureHunt() {
             
         }
         if (evt.target.id === 'treasureSq') {
+            generateTreasure()
             gameBoard.removeEventListener('click', play)
             treasureSq.innerHTML =
             `
             <img class='treasure-icons' src="../assets/images/gold-crown-coin-icon.png" alt="image of a gold coin">
             `
-            // treasureSq.style.backgroundColor = ''
+            treasureSq.style.backgroundColor = ''
+            messageEl.textContent = 
+            `
+            You won ${treasureWon.name}!
+            `
+            gold += treasureWon.value
+            console.log(gold)
         }
-        console.log(integrityPercent)
+        // console.log(integrityPercent)
     }
     
     function removeGameBoard() {
@@ -284,6 +355,7 @@ function init() {
     render()
     // startBackgroundMusic()
     gameAudio.playBackgroundMusic()
+    createMenu()
 }
 
 
@@ -296,10 +368,12 @@ function generateContent() {
 }
 
 function render() {
+    // let gameMenu = document.querySelector('header')
+    // mainEl.removeChild(gameMenu)
     containerBlock.innerHTML = ''
     appendOptions()
     updateMessage()
-    createMenu()
+    // createMenu()
 }
 
 function appendOptions() { 
@@ -683,22 +757,5 @@ function gameOver() {
 
 
 
-//* Functions for generating treasure winnings:
 
-function generateTreasure() {
-    let randomizeTreasures = Math.floor(Math.random() * 5)
-    console.log(randomizeTreasures, 'randomizeTreasures')
-    if (randomizeTreasures === 0) {
-        let treasureIdx = Math.floor(Math.random() * relics.length)
-        treasureArr = relics[treasureIdx]
-        console.log(treasureIdx, 'treasureIdx')
-    }
-    else {
-        let treasureIdx = Math.floor(Math.random() * goldWinnings.length)
-        treasureArr = goldWinnings[treasureIdx]
-        console.log(treasureIdx, 'treasureIdx')
-    }
 
-    console.log(treasureArr)
-}
-generateTreasure()

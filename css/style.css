@@ -132,6 +132,7 @@ h2 {
     gap: 5vmin;
 }
 
+
 .start-screen-button {
     font-family: 'Fredericka the Great', cursive;
     font-size: 2vmin;
@@ -233,6 +234,11 @@ h2 {
     display: flex;
     gap: 50px;
     max-width: 95%;
+}
+
+#mini-game {
+    width: 80vmin;
+    height: 80vmin;
 }
 
 .container {
